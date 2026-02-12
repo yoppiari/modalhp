@@ -1,0 +1,92 @@
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import { VitePWA } from 'vite-plugin-pwa'
+import path from 'path'
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [
+    vue(),
+    VitePWA({
+      registerType: 'autoUpdate',
+      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
+      manifest: {
+        name: 'ModalHP',
+        short_name: 'ModalHP',
+        description: 'Kelola Usaha Cuma Modal HP. Kasir, Pembukuan & Marketing Tools.',
+        theme_color: '#ffffff',
+        icons: [
+          {
+            src: 'pwa-192x192.png',
+            sizes: '192x192',
+            type: 'image/png'
+          },
+          {
+            src: 'pwa-512x512.png',
+            sizes: '512x512',
+            type: 'image/png'
+          }
+        ]
+      },
+      workbox: {
+        // Exclude tool chunks from initial download
+        globIgnores: ['**/assets/tool_*.js', '**/assets/tool_*.css'],
+        // Cache them only when visited/requested
+        runtimeCaching: [
+          {
+            urlPattern: ({ url }) => url.pathname.includes('tool_'),
+            handler: 'StaleWhileRevalidate',
+            options: {
+              cacheName: 'umkm-tools',
+              expiration: {
+                maxEntries: 50,
+                maxAgeSeconds: 60 * 60 * 24 * 365 // 1 year
+              },
+              cacheableResponse: {
+                statuses: [0, 200]
+              }
+            }
+          }
+        ]
+      }
+    })
+  ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          // Core Views
+          if (id.includes('src/views/Home.vue')) return 'core-home';
+          if (id.includes('src/views/Dashboard.vue')) return 'core-dashboard';
+          if (id.includes('src/views/Login.vue')) return 'core-login';
+
+          // Tools -> Separate Chunks
+          if (id.includes('src/views/')) {
+            const name = id.split('src/views/')[1].replace(/\//g, '_').replace(/\.vue$/, '');
+            return `tool_${name}`;
+          }
+        }
+      }
+    }
+  },
+  server: {
+    port: 8081, // Ensure matches current running port
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3005',
+        changeOrigin: true,
+        secure: false,
+      },
+      '/webhooks': {
+        target: 'http://localhost:3001',
+        changeOrigin: true,
+        secure: false,
+      }
+    }
+  }
+})

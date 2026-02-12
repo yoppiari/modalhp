@@ -1,0 +1,37 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                 String      @id @default(uuid())
+  email              String      @unique
+  subscriptionStatus String      @default("FREE") // FREE, PRO, CLOUD
+  offlineOnly        Boolean     @default(true)
+  createdAt          DateTime    @default(now())
+  updatedAt          DateTime    @updatedAt
+  cloudData          CloudData[]
+}
+
+model Otp {
+  id        Int      @id @default(autoincrement())
+  email     String
+  code      String
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+}
+
+model CloudData {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  dataBlob  String   // JSON string of the backup
+  updatedAt DateTime @updatedAt
+}
