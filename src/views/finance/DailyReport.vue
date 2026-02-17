@@ -10,12 +10,21 @@
       
       <!-- Date Picker -->
       <div class="bg-white p-3 rounded-xl border border-slate-100 shadow-sm flex items-center justify-between">
-         <button @click="changeDate(-1)" class="w-8 h-8 flex items-center justify-center bg-slate-50 rounded-lg text-slate-600">‹</button>
-         <div class="text-center">
+         <button @click="changeDate(-1)" class="w-8 h-8 flex items-center justify-center bg-slate-50 rounded-lg text-slate-600 active:bg-slate-200">‹</button>
+         <div class="text-center relative">
             <div class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Tanggal Laporan</div>
-            <div class="font-bold text-slate-700">{{ formattedDate }}</div>
+            <div class="font-bold text-slate-700 flex items-center justify-center gap-1">
+               {{ formattedDate }}
+               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-400"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+            </div>
+            <!-- Hidden Date Input Overlay -->
+            <input 
+               type="date" 
+               v-model="dateInputValue"
+               class="absolute inset-0 opacity-0 w-full h-full cursor-pointer"
+            />
          </div>
-         <button @click="changeDate(1)" class="w-8 h-8 flex items-center justify-center bg-slate-50 rounded-lg text-slate-600">›</button>
+         <button @click="changeDate(1)" class="w-8 h-8 flex items-center justify-center bg-slate-50 rounded-lg text-slate-600 active:bg-slate-200">›</button>
       </div>
 
       <!-- Summary Cards -->
@@ -112,6 +121,21 @@ const changeDate = (days) => {
    d.setDate(d.getDate() + days);
    selectedDate.value = d;
 };
+
+const dateInputValue = computed({
+   get: () => {
+      const d = new Date(selectedDate.value);
+      const year = d.getFullYear();
+      const month = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      return `${year}-${month}-${day}`;
+   },
+   set: (val) => {
+      if (val) {
+         selectedDate.value = new Date(val);
+      }
+   }
+});
 
 const formattedDate = computed(() => {
    return new Intl.DateTimeFormat('id-ID', { dateStyle: 'full' }).format(selectedDate.value);

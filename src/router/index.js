@@ -25,7 +25,7 @@ const routes = [
 
     // Tools (Protected) - Prefixed with /apps
     { path: '/apps/settings', name: 'Settings', component: () => import('../views/Settings.vue'), meta: { requiresAuth: true } },
-    { path: '/apps/bonus', name: 'Bonus', component: () => import('../views/Bonus.vue'), meta: { requiresAuth: true } },
+    { path: '/apps/ekstra', name: 'Ekstra', component: () => import('../views/Ekstra.vue'), meta: { requiresAuth: true } },
 
     // Finance
     { path: '/apps/finance/invoice', name: 'InvoiceGenerator', component: loadTool('finance', 'InvoiceGenerator'), meta: { requiresAuth: true } },

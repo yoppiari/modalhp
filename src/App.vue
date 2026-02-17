@@ -12,9 +12,9 @@
         <component :is="HomeIcon" size="24" stroke-width="2" />
         <span class="text-[10px]">Home</span>
       </router-link>
-      <router-link to="/apps/bonus" class="flex flex-col items-center gap-1 p-2 rounded-xl transition-all duration-300" active-class="text-blue-600 scale-110">
-         <component :is="GiftIcon" size="24" stroke-width="2" />
-         <span class="text-[10px]">Bonus</span>
+      <router-link to="/apps/ekstra" class="flex flex-col items-center gap-1 p-2 rounded-xl transition-all duration-300" active-class="text-blue-600 scale-110">
+         <component :is="StarIcon" size="24" stroke-width="2" />
+         <span class="text-[10px]">Ekstra</span>
       </router-link>
       <router-link to="/apps/settings" class="flex flex-col items-center gap-1 p-2 rounded-xl transition-all duration-300" active-class="text-blue-600 scale-110">
         <component :is="SettingsIcon" size="24" stroke-width="2" />
@@ -38,7 +38,7 @@ import { useRoute } from 'vue-router';
 import { 
   Home as HomeIcon, 
   Settings as SettingsIcon, 
-  Gift as GiftIcon,
+  Star as StarIcon,
   Download as DownloadIcon
 } from 'lucide-vue-next';
 
