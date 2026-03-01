@@ -9,11 +9,9 @@ import Login from '../views/Login.vue' // Ensure this exists
 const loadTool = (category, tool) => () => import(`../views/${category}/${tool}.vue`)
 
 const routes = [
-    // Redirect root to dashboard (will trigger login if not authenticated)
-    { path: '/', redirect: '/apps' },
-
     // Public Marketing Home
-    { path: '/welcome', name: 'Home', component: Home },
+    { path: '/', name: 'Home', component: Home },
+
 
     // Auth
     { path: '/apps/login', name: 'Login', component: Login, meta: { requiresGuest: true } },
