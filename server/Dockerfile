@@ -2,6 +2,9 @@ FROM node:20-alpine
 
 WORKDIR /app
 
+# Install OpenSSL for Prisma engine compatibility
+RUN apk add --no-cache openssl
+
 # Copy package files
 COPY package*.json ./
 
@@ -25,5 +28,6 @@ ENV DATABASE_URL="file:/app/data/prod.db"
 
 EXPOSE 3000
 
-# Run migrations and start server
-CMD ["sh", "-c", "npx prisma migrate deploy && node src/index.js"]
+# Push schema to DB (creates tables idempotently) and start server
+CMD ["sh", "-c", "npx prisma db push --skip-generate && node src/index.js"]
+
