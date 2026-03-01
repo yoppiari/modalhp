@@ -23,10 +23,13 @@
     </nav>
     
     <!-- PWA Install Prompt -->
-    <div v-if="deferredPrompt" class="fixed bottom-24 right-4 z-50">
-      <button @click="installApp" class="bg-slate-900 text-white px-4 py-2 rounded-full shadow-xl flex items-center gap-2 text-sm font-bold animate-bounce">
+    <div v-if="deferredPrompt && !installDismissed" class="fixed bottom-24 right-4 z-50 flex items-center gap-2">
+      <button @click="installApp" class="bg-slate-900 text-white px-4 py-2 rounded-full shadow-xl flex items-center gap-2 text-sm font-bold">
         <component :is="DownloadIcon" size="16"/>
         Install App
+      </button>
+      <button @click="installDismissed = true" class="bg-white text-slate-500 w-7 h-7 rounded-full shadow-lg flex items-center justify-center text-xs font-bold hover:bg-slate-100">
+        ✕
       </button>
     </div>
   </div>
@@ -48,6 +51,7 @@ const showNav = computed(() => {
 });
 
 const deferredPrompt = ref(null);
+const installDismissed = ref(false);
 
 onMounted(() => {
   window.addEventListener('beforeinstallprompt', (e) => {
