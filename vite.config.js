@@ -29,9 +29,11 @@ export default defineConfig({
         ]
       },
       workbox: {
-        // Exclude tool chunks from initial download
-        globIgnores: ['**/assets/tool_*.js', '**/assets/tool_*.css'],
-        // Cache them only when visited/requested
+        // Exclude tool JS chunks from initial precache (downloaded on-demand)
+        // CSS is NOT excluded — it's small and needed for offline rendering
+        globIgnores: ['**/assets/tool_*.js'],
+        navigateFallback: 'index.html',
+        // Cache tool JS when visited/requested + Google Fonts for offline
         runtimeCaching: [
           {
             urlPattern: ({ url }) => url.pathname.includes('tool_'),
@@ -40,6 +42,31 @@ export default defineConfig({
               cacheName: 'umkm-tools',
               expiration: {
                 maxEntries: 50,
+                maxAgeSeconds: 60 * 60 * 24 * 365 // 1 year
+              },
+              cacheableResponse: {
+                statuses: [0, 200]
+              }
+            }
+          },
+          {
+            urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'google-fonts-stylesheets',
+              expiration: {
+                maxEntries: 10,
+                maxAgeSeconds: 60 * 60 * 24 * 365 // 1 year
+              }
+            }
+          },
+          {
+            urlPattern: /^https:\/\/fonts\.gstatic\.com\/.*/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'google-fonts-webfonts',
+              expiration: {
+                maxEntries: 30,
                 maxAgeSeconds: 60 * 60 * 24 * 365 // 1 year
               },
               cacheableResponse: {

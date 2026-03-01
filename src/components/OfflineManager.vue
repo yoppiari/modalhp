@@ -64,9 +64,21 @@ const APP_DETAILS = {
   RandomPicker: { name: 'Doorprize', desc: 'Acak Pemenang' }
 };
 
-onMounted(() => {
+// Check if a tool's JS chunk is already in the SW cache
+const isToolCached = async (toolId) => {
+  try {
+    const cache = await caches.open('umkm-tools');
+    const keys = await cache.keys();
+    // Tool chunks have filenames like tool_finance_pos_Cashier-xxx.js
+    return keys.some(req => req.url.includes(`tool_`) && req.url.includes(toolId));
+  } catch {
+    return false;
+  }
+};
+
+onMounted(async () => {
   const routes = router.getRoutes();
-  
+
   // Create an array with the same order as APP_DETAILS (keys)
   const orderedKeys = Object.keys(APP_DETAILS);
   
@@ -84,6 +96,15 @@ onMounted(() => {
     .sort((a, b) => orderedKeys.indexOf(a.id) - orderedKeys.indexOf(b.id));
 
   tools.value = mappedTools;
+
+  // Check cache status for each tool
+  for (const tool of tools.value) {
+    const cached = await isToolCached(tool.id);
+    if (cached) {
+      tool.downloaded = true;
+      tool.status = 'Offline Ready';
+    }
+  }
 });
 
 const downloadTool = async (tool) => {
@@ -112,3 +133,4 @@ const downloadAllTools = async () => {
   isDownloadingAll.value = false;
 };
 </script>
+
