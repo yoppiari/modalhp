@@ -1,11 +1,11 @@
 <template>
   <div class="bg-pink-50 min-h-screen pb-24">
-    <div class="bg-pink-600 text-white p-6 rounded-b-[2.5rem] shadow-lg mb-6 sticky top-0 z-10">
+    <div class="bg-pink-600 text-white px-6 pt-6 pb-10 rounded-b-[2.5rem] shadow-lg sticky top-0 z-10">
       <h2 class="text-2xl font-bold">Cek Diskon</h2>
       <p class="text-pink-100 text-sm opacity-90">Hitung promo biar gak boncos</p>
     </div>
 
-    <div class="px-4 max-w-md mx-auto space-y-6">
+    <div class="px-4 max-w-md mx-auto space-y-6 pt-6">
        <!-- Scenario 1: % Discount -->
        <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 relative overflow-hidden">
           <div class="absolute -right-4 -top-4 w-16 h-16 bg-pink-100 rounded-full"></div>

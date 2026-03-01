@@ -1,7 +1,7 @@
 <template>
   <div class="bg-slate-50 min-h-screen pb-24 relative">
     <!-- Top Bar -->
-    <div class="bg-indigo-600 px-4 pt-4 pb-12 rounded-b-[2rem] shadow-lg sticky top-0 z-10">
+    <div class="bg-indigo-600 px-4 pt-4 pb-8 rounded-b-[2rem] shadow-lg sticky top-0 z-10">
       <div class="flex justify-between items-center text-white mb-4">
         <h2 class="font-bold text-lg">Kasir Warung</h2>
         <div class="bg-indigo-500/50 px-3 py-1 rounded-full text-xs font-mono">
@@ -17,7 +17,7 @@
     </div>
 
     <!-- Product Grid -->
-    <div class="px-4 -mt-8 grid grid-cols-2 gap-3 pb-32">
+    <div class="px-4 mt-4 grid grid-cols-2 gap-3 pb-32">
        <div v-for="product in filteredProducts" :key="product.id" 
             @click="addToCart(product)"
             class="bg-white p-3 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-between h-32 active:scale-95 transition-transform relative overflow-hidden">

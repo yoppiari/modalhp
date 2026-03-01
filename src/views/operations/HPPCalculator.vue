@@ -1,11 +1,11 @@
 <template>
   <div class="bg-slate-50 min-h-screen pb-24">
-    <div class="bg-orange-500 text-white p-6 rounded-b-[2.5rem] shadow-lg mb-6 sticky top-0 z-10">
+    <div class="bg-orange-500 text-white px-6 pt-6 pb-10 rounded-b-[2.5rem] shadow-lg sticky top-0 z-10">
       <h2 class="text-2xl font-bold">Cara Hitung HPP Makanan</h2>
       <p class="text-orange-100 text-sm opacity-90">Hitung modal pokok produksi dengan detail & mudah</p>
     </div>
     
-    <div class="px-4 max-w-md mx-auto space-y-5">
+    <div class="px-4 max-w-md mx-auto space-y-5 pt-6">
       <!-- Product Name Input -->
       <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
          <label class="text-xs font-bold text-slate-500 uppercase mb-1">Nama Produk Hasil</label>

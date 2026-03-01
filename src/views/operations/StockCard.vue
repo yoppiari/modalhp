@@ -1,11 +1,11 @@
 <template>
   <div class="bg-blue-50 min-h-screen pb-24">
-    <div class="bg-blue-600 text-white p-6 rounded-b-[2.5rem] shadow-lg mb-6 sticky top-0 z-10">
+    <div class="bg-blue-600 text-white px-6 pt-6 pb-10 rounded-b-[2.5rem] shadow-lg sticky top-0 z-10">
       <h2 class="text-2xl font-bold">Alternatif Template Stok Barang Excel</h2>
       <p class="text-blue-100 text-sm opacity-90">Catat keluar masuk barang digital pengganti Excel</p>
     </div>
 
-    <div class="px-4 max-w-md mx-auto space-y-4">
+    <div class="px-4 max-w-md mx-auto space-y-4 pt-6">
       
       <!-- Product Selector -->
       <div class="bg-white p-4 rounded-2xl shadow-sm border border-blue-100">
