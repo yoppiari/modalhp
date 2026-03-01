@@ -1,5 +1,5 @@
 import prisma from '../prisma.js';
-import { sendOtpEmail } from '../services/resendService.js';
+import { sendOtpEmail } from '../services/emailService.js';
 import crypto from 'crypto';
 
 export const requestOtp = async (req, res) => {

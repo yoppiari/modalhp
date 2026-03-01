@@ -1,4 +1,4 @@
-import { sendSupportEmail } from '../services/resendService.js';
+import { sendSupportEmail } from '../services/emailService.js';
 
 export const submitSupportRequest = async (req, res) => {
     const { name, email, message, type } = req.body;
