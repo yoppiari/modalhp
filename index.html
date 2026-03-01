@@ -12,5 +12,34 @@
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
+    <script>
+      // SW Recovery: if app doesn't render in 4s, clear stale SW & reload
+      (function() {
+        if (sessionStorage.getItem('sw_recovery')) return; // prevent loop
+        setTimeout(function() {
+          var app = document.getElementById('app');
+          if (app && app.children.length === 0) {
+            sessionStorage.setItem('sw_recovery', '1');
+            if ('serviceWorker' in navigator) {
+              navigator.serviceWorker.getRegistrations().then(function(regs) {
+                var tasks = regs.map(function(r) { return r.unregister(); });
+                return Promise.all(tasks);
+              }).then(function() {
+                return caches.keys();
+              }).then(function(names) {
+                return Promise.all(names.map(function(n) { return caches.delete(n); }));
+              }).then(function() {
+                location.reload();
+              });
+            } else {
+              location.reload();
+            }
+          } else {
+            sessionStorage.removeItem('sw_recovery');
+          }
+        }, 4000);
+      })();
+    </script>
   </body>
 </html>
+
