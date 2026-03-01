@@ -9,38 +9,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <title>ModalHP - Kelola Usaha Cuma Modal HP</title>
+  <script defer src="/sw-recovery.js"></script>
 </head>
 
 <body>
   <div id="app"></div>
   <script type="module" src="/src/main.js"></script>
-  <script>
-    // SW Recovery: if app doesn't render in 3s, clear stale SW & reload
-    (function () {
-      var retries = parseInt(sessionStorage.getItem('sw_retries') || '0');
-      setTimeout(function () {
-        var app = document.getElementById('app');
-        if (app && app.children.length === 0 && retries < 3) {
-          sessionStorage.setItem('sw_retries', String(retries + 1));
-          if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.getRegistrations().then(function (regs) {
-              return Promise.all(regs.map(function (r) { return r.unregister(); }));
-            }).then(function () {
-              return caches.keys();
-            }).then(function (names) {
-              return Promise.all(names.map(function (n) { return caches.delete(n); }));
-            }).then(function () {
-              location.reload();
-            });
-          } else {
-            location.reload();
-          }
-        } else if (app && app.children.length > 0) {
-          sessionStorage.removeItem('sw_retries');
-        }
-      }, 3000);
-    })();
-  </script>
 </body>
 
 </html>
