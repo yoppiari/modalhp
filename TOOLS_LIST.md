@@ -1,156 +1,101 @@
-# Direktori Tools ModalHP (Offline & No-AI)
+# Direktori Tools UMKM Kit (15 Tools)
 
-Dokumen ini berisi daftar status implementasi dari 25 tools yang ada di dalam aplikasi UMKM Kit. Pengguna dapat merujuk ke dokumen ini untuk mengetahui fitur apa saja yang sudah tersedia.
+Dokumen ini berisi daftar status implementasi dari 15 tools yang ada di dalam aplikasi UMKM Kit hasil perombakan terbaru. Pengguna dapat merujuk ke dokumen ini untuk mengetahui fitur apa saja yang sudah tersedia. Semua tool ini dibagi ke dalam 4 kategori utama.
 
 ---
 
-## 📂 Core Ecosystem (Terintegrasi Database)
-Tools ini menggunakan database lokal (`IndexedDB`) yang saling terhubung.
+## 📂 1. Core Ecosystem (Manajemen Utama Warung)
+Kumpulan fitur dasar yang saling terintegrasi dan menggunakan database lokal (`IndexedDB`).
 
-1. **[✅ Ready] Kasir Warung (POS Lite)**
+1. **Kasir Warung (POS Lite)**
    - **Path:** `/finance/pos`
    - **Fungsi:** Mencatat transaksi penjualan, stok berkurang otomatis.
    - **File:** `src/views/finance/pos/Cashier.vue`
 
-2. **[✅ Ready] Produk Manager**
+2. **Produk Manager**
    - **Path:** `/finance/products`
    - **Fungsi:** Tambah, edit, hapus data produk dan stok.
    - **File:** `src/views/finance/pos/ProductList.vue`
 
-3. **[✅ Ready] Laporan Harian**
+3. **Laporan Harian**
    - **Path:** `/finance/report`
    - **Fungsi:** Rekap omzet harian & riwayat transaksi.
    - **File:** `src/views/finance/DailyReport.vue`
 
-4. **[✅ Ready] Generator Kuitansi (Receipt)**
+4. **Buku Hutang (Debt Manager)**
+   - **Path:** `/utilities/debt-manager`
+   - **Fungsi:** Catat hutang pelanggan & otomatis kirim tagihan via WhatsApp (Reminder WA).
+   - **File:** `src/views/utilities/DebtManager.vue`
+
+5. **Generator Kuitansi (Receipt)**
    - **Path:** `/finance/invoice`
    - **Fungsi:** Cetak ulang struk atau share via WA dari riwayat transaksi.
    - **File:** `src/views/finance/ReceiptGenerator.vue`
 
-5. **[✅ Ready] Buku Hutang (Debt Manager)**
-   - **Path:** `/utilities/debt-manager`
-   - **Fungsi:** Catat hutang pelanggan & reminder WA.
-   - **File:** `src/views/utilities/DebtManager.vue`
+6. **Kartu Stok Digital**
+   - **Path:** `/operations/stock-card`
+   - **Fungsi:** Alternatif template stok barang excel. Catat barang masuk/keluar & histori mutasi stok.
+   - **File:** `src/views/operations/StockCard.vue`
 
 ---
 
-## 📂 Marketing (Pemasaran)
-Alat bantu promosi dan penjualan.
+## 📂 2. SEO & Traffic Magnets (Alat Usaha Harian)
+Aplikasi ringan dengan volume pencarian Google yang sangat tinggi. Ujung tombak akuisisi user organic.
 
-6. **[✅ Ready] Kalkulator Harga Ojol**
-   - **Path:** `/marketing/food-delivery`
-   - **Fungsi:** Hitung harga jual agar aman dari potongan komisi aplikasi.
-   - **File:** `src/views/marketing/FoodDeliveryPricing.vue`
+7. **Generator Slip Gaji & Lembur**
+   - **Path:** `/finance/payroll`
+   - **Fungsi:** Kalkulator Gaji Bersih / Template Slip Gaji. Hitung lembur, cicilan, dan cetak slip gaji karyawan pdf.
+   - **File:** `src/views/finance/Payroll.vue`
 
-7. **[✅ Ready] Link Bio Generator**
-   - **Path:** `/marketing/link-bio`
-   - **Fungsi:** Buat halaman profil link (HTML) sederhana.
-   - **File:** `src/views/marketing/LinkBio.vue`
+8. **Kalkulator HPP Makanan**
+   - **Path:** `/operations/hpp-calculator`
+   - **Fungsi:** Cara Hitung HPP Makanan. Hitung modal produksi dengan detail.
+   - **File:** `src/views/operations/HPPCalculator.vue`
 
-8. **[✅ Ready] Generator Kartu Nama**
-   - **Path:** `/marketing/business-card`
-   - **Fungsi:** Desain kartu nama instan siap download gambar.
-   - **File:** `src/views/marketing/BusinessCard.vue`
+9. **WhatsApp Link Generator**
+   - **Path:** `/marketing/whatsapp-link`
+   - **Fungsi:** Cara Membuat Link WA Me dengan pesan otomatis.
+   - **File:** `src/views/marketing/WhatsAppLink.vue`
 
-9. **[✅ Ready] QR Menu Maker**
-   - **Path:** `/marketing/qr-menu`
-   - **Fungsi:** Generate QR Code berisi teks menu dari database produk.
-   - **File:** `src/views/marketing/QRMenuMaker.vue`
-
-10. **[✅ Ready] Banner Toko Generator**
-    - **Path:** `/marketing/banner`
-    - **Fungsi:** Buat gambar status WA (Buka/Tutup/Promo).
-    - **File:** `src/views/marketing/BannerGenerator.vue`
-
-11. **[✅ Ready] Template Copywriting WA**
-    - **Path:** `/marketing/copywriting`
-    - **Fungsi:** Template chat balasan otomatis (Auto Text).
-    - **File:** `src/views/marketing/CopywritingWA.vue`
-
-12. **[✅ Ready] Diskon Planner**
-    - **Path:** `/marketing/discount`
-    - **Fungsi:** Hitung profit saat memberikan diskon/promo.
-    - **File:** `src/views/marketing/DiscountPlanner.vue`
-
-13. **[✅ Ready] WhatsApp Link Generator**
-    - **Path:** `/marketing/whatsapp-link`
-    - **Fungsi:** Buat link `wa.me` dengan pesan pre-filled.
-    - **File:** `src/utils/tools-config/marketing.js` (Config Based)
-
----
-
-## 📂 Operations (Operasional)
-Manajemen toko dan gudang.
-
-14. **[✅ Ready] Kartu Stok Digital**
-    - **Path:** `/operations/stock-card`
-    - **Fungsi:** Catat barang masuk/keluar & histori mutasi stok.
-    - **File:** `src/views/operations/StockCard.vue`
-
-15. **[✅ Ready] Cetak Label Pengiriman**
-    - **Path:** `/operations/shipping-label`
-    - **Fungsi:** Form cetak label resi (PDF A6).
-    - **File:** `src/views/operations/ShippingLabel.vue`
-
-16. **[✅ Ready] Surat Jalan Generator**
-    - **Path:** `/operations/delivery-order`
-    - **Fungsi:** Cetak dokumen pengantar barang formal.
-    - **File:** `src/views/operations/DeliveryOrder.vue`
-
-17. **[✅ Ready] Konversi Resep (Recipe Scaler)**
-    - **Path:** `/operations/recipe-scaler`
-    - **Fungsi:** Kalkulator ubah porsi resep masakan.
-    - **File:** `src/views/operations/RecipeConverter.vue`
-
-18. **[✅ Ready] SOP Harian Checklist**
-    - **Path:** `/operations/sop-checklist`
-    - **Fungsi:** Daftar tugas harian karyawan yang reset otomatis.
-    - **File:** `src/views/operations/SOPChecklist.vue`
-
-19. **[✅ Ready] HPP Calculator**
-    - **Path:** `/operations/hpp-calculator`
-    - **Fungsi:** Hitung modal produksi & simpan jadi produk baru.
-    - **File:** `src/views/operations/HPPCalculator.vue`
-
----
-
-## 📂 Utilities & Niche (Lainnya)
-Fitur pelengkap produktivitas.
-
-20. **[✅ Ready] QR Wifi Maker**
-    - **Path:** `/utilities/qr-wifi`
-    - **Fungsi:** Generate QR Code untuk login Wifi otomatis.
-    - **File:** `src/views/utilities/QRWifi.vue`
-
-21. **[✅ Ready] Timer Dapur**
-    - **Path:** `/utilities/kitchen-timer`
-    - **Fungsi:** Timer masak multi-slot.
-    - **File:** `src/views/utilities/KitchenTimer.vue`
-
-22. **[✅ Ready] Split Bill Kalkulator**
-    - **Path:** `/utilities/bill-splitter`
-    - **Fungsi:** Hitung patungan makan (+Tax/Service).
-    - **File:** `src/views/utilities/BillSplitter.vue`
-
-23. **[✅ Ready] Simulasi Kredit**
+10. **Simulasi Kredit**
     - **Path:** `/utilities/credit-simulator`
-    - **Fungsi:** Hitung cicilan kredit barang/kendaraan.
+    - **Fungsi:** Kalkulator cicilan kredit barang/kendaraan harian maupun bulanan.
     - **File:** `src/views/utilities/CreditSimulator.vue`
 
-24. **[✅ Ready] Random Picker (Doorprize)**
-    - **Path:** `/utilities/random-picker`
-    - **Fungsi:** Acak pemenang dari database pelanggan.
-    - **File:** `src/views/utilities/RandomPicker.vue`
+---
 
-25. **[✅ Ready] Kalkulator Kain**
-    - **Path:** `/utilities/fabric-calc`
-    - **Fungsi:** Estimasi kebutuhan kain (Tailor Mode).
-    - **File:** `src/views/utilities/FabricCalculator.vue`
+## 📂 3. Marketing & Sales (Penunjang Jualan)
+Tool yang sifatnya "nice to have" tapi sangat membantu untuk promosi.
 
-26. **[✅ Ready] Simple To-Do**
-    - **Path:** `/utilities/simple-todo`
-    - **Fungsi:** Catatan tugas sederhana.
-    - **File:** `src/views/utilities/SimpleToDo.vue`
+11. **Diskon Planner**
+    - **Path:** `/marketing/discount`
+    - **Fungsi:** Hitung profit dan strategi harga saat memberikan diskon/promo agar tidak rugi.
+    - **File:** `src/views/marketing/DiscountPlanner.vue`
+
+12. **Kalkulator Harga Ojol**
+    - **Path:** `/marketing/food-delivery`
+    - **Fungsi:** Hitung harga jual GoFood/GrabFood agar aman dari potongan komisi aplikasi.
+    - **File:** `src/views/marketing/FoodDeliveryPricing.vue`
+
+13. **QR Code Generator (ALL-IN-ONE)**
+    - **Path:** `/marketing/qr-code`
+    - **Fungsi:** Pembuat QR Code (Teks, Link, Menu, dan WiFi Credentials) serbaguna.
+    - **File:** `src/views/marketing/QRCodeGenerator.vue`
 
 ---
-*Terakhir Diperbarui: 31 Januari 2026*
+
+## 📂 4. Viral Loop & Engagement (Seru-Seruan)
+Tool interaktif yang dapat memicu pengguna untuk membagikan aplikasi ke sesama rekan mereka.
+
+14. **Split Bill Kalkulator**
+    - **Path:** `/utilities/bill-splitter`
+    - **Fungsi:** Hitung patungan makan tongkrongan lengkap dengan tambahan Tax dan Service.
+    - **File:** `src/views/utilities/BillSplitter.vue`
+
+15. **Random Picker (Doorprize)**
+    - **Path:** `/utilities/random-picker`
+    - **Fungsi:** Acak pemenang / picker online untuk sistem bonus atau arisan pelanggan.
+    - **File:** `src/views/utilities/RandomPicker.vue`
+
+---
+*Terakhir Diperbarui: Sesuai hasil Revamp Februari 2026*

@@ -1,8 +1,8 @@
 <template>
   <div class="bg-red-50 min-h-screen pb-24">
     <div class="bg-red-600 text-white p-6 rounded-b-[2.5rem] shadow-lg mb-6 sticky top-0 z-10">
-      <h2 class="text-2xl font-bold">Buku Hutang</h2>
-      <p class="text-red-100 text-sm opacity-90">Catat kasbon pelanggan agar tidak lupa</p>
+      <h2 class="text-2xl font-bold">Catat Hutang & Reminder WA</h2>
+      <p class="text-red-100 text-sm opacity-90">Catat piutang, dan otomatis kirim tagihan via WhatsApp</p>
     </div>
 
     <div class="px-4 max-w-md mx-auto space-y-4">

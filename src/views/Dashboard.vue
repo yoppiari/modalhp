@@ -28,10 +28,10 @@
       <!-- Categories -->
       <div class="space-y-8 pb-20">
         
-        <!-- Finance (Highlight) -->
+        <!-- Category 1: Core Ecosystem (Manajemen Utama Warung) -->
         <section>
           <div class="flex items-center justify-between mb-4 px-1">
-            <h2 class="font-bold text-slate-800 text-base">Keuangan & Admin</h2>
+            <h2 class="font-bold text-slate-800 text-base">Manajemen Utama</h2>
             <component :is="BanknoteIcon" size="18" class="text-blue-500 bg-blue-50 p-0.5 rounded" />
           </div>
           
@@ -53,6 +53,15 @@
                   <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
                 </div>
               </div>
+            </router-link>
+
+             <!-- Produk -->
+            <router-link to="/apps/finance/products" class="bg-white p-4 rounded-3xl shadow-[0_4px_20px_-10px_rgba(0,0,0,0.08)] border border-slate-50 hover:border-indigo-100 hover:shadow-lg transition-all active:scale-95 relative group">
+               <div class="bg-indigo-50 w-12 h-12 rounded-2xl flex items-center justify-center text-indigo-600 mb-3 group-hover:scale-110 transition-transform duration-300">
+                <component :is="PackageIcon" size="24" stroke-width="2" />
+              </div>
+              <h3 class="font-bold text-slate-700 text-sm mb-0.5">Produk</h3>
+              <p class="text-[10px] text-slate-400 font-medium">Kelola Stok</p>
             </router-link>
 
             <!-- Laporan -->
@@ -78,28 +87,10 @@
               <div class="bg-indigo-50 w-12 h-12 rounded-2xl flex items-center justify-center text-indigo-600 mb-3 group-hover:scale-110 transition-transform duration-300">
                 <component :is="FileTextIcon" size="24" stroke-width="2" />
               </div>
-              <h3 class="font-bold text-slate-700 text-sm mb-0.5">Invoice</h3>
+              <h3 class="font-bold text-slate-700 text-sm mb-0.5">Kuitansi</h3>
               <p class="text-[10px] text-slate-400 font-medium">Cetak Struk</p>
             </router-link>
 
-             <!-- Produk -->
-            <router-link to="/apps/finance/products" class="bg-white p-4 rounded-3xl shadow-[0_4px_20px_-10px_rgba(0,0,0,0.08)] border border-slate-50 hover:border-indigo-100 hover:shadow-lg transition-all active:scale-95 relative group">
-               <div class="bg-indigo-50 w-12 h-12 rounded-2xl flex items-center justify-center text-indigo-600 mb-3 group-hover:scale-110 transition-transform duration-300">
-                <component :is="PackageIcon" size="24" stroke-width="2" />
-              </div>
-              <h3 class="font-bold text-slate-700 text-sm mb-0.5">Produk</h3>
-              <p class="text-[10px] text-slate-400 font-medium">Kelola Stok</p>
-            </router-link>
-          </div>
-        </section>
-
-        <!-- Operations -->
-        <section>
-          <div class="flex items-center justify-between mb-4 px-1">
-             <h2 class="font-bold text-slate-800 text-base">Operasional</h2>
-             <component :is="LayersIcon" size="18" class="text-orange-500 bg-orange-50 p-0.5 rounded" />
-          </div>
-          <div class="grid grid-cols-2 gap-4">
             <!-- Kartu Stok -->
             <router-link to="/apps/operations/stock-card" class="bg-white p-4 rounded-3xl shadow-[0_4px_20px_-10px_rgba(0,0,0,0.08)] border border-slate-50 hover:border-blue-100 hover:shadow-lg transition-all active:scale-95 relative group">
                <div class="bg-blue-50 w-12 h-12 rounded-2xl flex items-center justify-center text-blue-600 mb-3 group-hover:scale-110 transition-transform duration-300">
@@ -108,6 +99,24 @@
               <h3 class="font-bold text-slate-700 text-sm mb-0.5">Kartu Stok</h3>
               <p class="text-[10px] text-slate-400 font-medium">Mutasi Barang</p>
             </router-link>
+          </div>
+        </section>
+
+        <!-- Category 2: SEO & Traffic Magnets -->
+        <section>
+          <div class="flex items-center justify-between mb-4 px-1">
+             <h2 class="font-bold text-slate-800 text-base">Alat Usaha Harian</h2>
+             <component :is="LayersIcon" size="18" class="text-orange-500 bg-orange-50 p-0.5 rounded" />
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+             <!-- Slip Gaji -->
+            <router-link to="/apps/finance/payroll" class="bg-white p-4 rounded-3xl shadow-[0_4px_20px_-10px_rgba(0,0,0,0.08)] border border-slate-50 hover:border-emerald-100 hover:shadow-lg transition-all active:scale-95 relative group">
+               <div class="bg-emerald-50 w-12 h-12 rounded-2xl flex items-center justify-center text-emerald-600 mb-3 group-hover:scale-110 transition-transform duration-300">
+                <component :is="UsersIcon" size="24" stroke-width="2" />
+              </div>
+              <h3 class="font-bold text-slate-700 text-sm mb-0.5">Slip Gaji</h3>
+              <p class="text-[10px] text-slate-400 font-medium">Hitung Gaji</p>
+            </router-link>
 
             <!-- Cek HPP -->
             <router-link to="/apps/operations/hpp-calculator" class="bg-white p-4 rounded-3xl shadow-[0_4px_20px_-10px_rgba(0,0,0,0.08)] border border-slate-50 hover:border-orange-100 hover:shadow-lg transition-all active:scale-95 relative group">
@@ -115,106 +124,37 @@
                 <component :is="CalculatorIcon" size="24" stroke-width="2" />
               </div>
               <h3 class="font-bold text-slate-700 text-sm mb-0.5">Cek HPP</h3>
-              <p class="text-[10px] text-slate-400 font-medium">Modal Produk</p>
+              <p class="text-[10px] text-slate-400 font-medium">Modal Kuliner</p>
             </router-link>
 
-             <router-link to="/apps/operations/shipping-label" class="bg-white p-4 rounded-3xl shadow-[0_4px_20px_-10px_rgba(0,0,0,0.08)] border border-slate-50 hover:border-orange-100 hover:shadow-lg transition-all active:scale-95 relative group">
-               <div class="bg-orange-50 w-12 h-12 rounded-2xl flex items-center justify-center text-orange-600 mb-3 group-hover:scale-110 transition-transform duration-300">
-                <component :is="TruckIcon" size="24" stroke-width="2" />
-              </div>
-              <h3 class="font-bold text-slate-700 text-sm mb-0.5">Label Resi</h3>
-              <p class="text-[10px] text-slate-400 font-medium">Cetak Alamat</p>
-            </router-link>
-
-             <router-link to="/apps/operations/delivery-order" class="bg-white p-4 rounded-3xl shadow-[0_4px_20px_-10px_rgba(0,0,0,0.08)] border border-slate-50 hover:border-indigo-100 hover:shadow-lg transition-all active:scale-95 relative group">
-               <div class="bg-indigo-50 w-12 h-12 rounded-2xl flex items-center justify-center text-indigo-600 mb-3 group-hover:scale-110 transition-transform duration-300">
-                <component :is="FileTextIcon" size="24" stroke-width="2" />
-              </div>
-              <h3 class="font-bold text-slate-700 text-sm mb-0.5">Surat Jalan</h3>
-              <p class="text-[10px] text-slate-400 font-medium">Kirim Barang</p>
-            </router-link>
-
-            <router-link to="/apps/operations/recipe-scaler" class="bg-white p-4 rounded-3xl shadow-[0_4px_20px_-10px_rgba(0,0,0,0.08)] border border-slate-50 hover:border-yellow-100 hover:shadow-lg transition-all active:scale-95 relative group">
-               <div class="bg-yellow-50 w-12 h-12 rounded-2xl flex items-center justify-center text-yellow-600 mb-3 group-hover:scale-110 transition-transform duration-300">
-                <component :is="ChefHatIcon" size="24" stroke-width="2" />
-              </div>
-              <h3 class="font-bold text-slate-700 text-sm mb-0.5">Resep</h3>
-              <p class="text-[10px] text-slate-400 font-medium">Ubah Porsi</p>
-            </router-link>
-
-            <router-link to="/apps/operations/sop-checklist" class="bg-white p-4 rounded-3xl shadow-[0_4px_20px_-10px_rgba(0,0,0,0.08)] border border-slate-50 hover:border-emerald-100 hover:shadow-lg transition-all active:scale-95 relative group">
-               <div class="bg-emerald-50 w-12 h-12 rounded-2xl flex items-center justify-center text-emerald-600 mb-3 group-hover:scale-110 transition-transform duration-300">
-                <component :is="CheckSquareIcon" size="24" stroke-width="2" />
-              </div>
-              <h3 class="font-bold text-slate-700 text-sm mb-0.5">SOP Toko</h3>
-              <p class="text-[10px] text-slate-400 font-medium">Checklist</p>
-            </router-link>
-          </div>
-        </section>
-
-        <!-- Marketing -->
-        <section>
-          <div class="flex items-center justify-between mb-4 px-1">
-            <h2 class="font-bold text-slate-800 text-base">Marketing</h2>
-            <component :is="MegaphoneIcon" size="18" class="text-green-500 bg-green-50 p-0.5 rounded" />
-          </div>
-          <div class="grid grid-cols-2 gap-4">
+             <!-- WA Link -->
             <router-link to="/apps/marketing/whatsapp-link" class="bg-white p-4 rounded-3xl shadow-[0_4px_20px_-10px_rgba(0,0,0,0.08)] border border-slate-50 hover:border-green-100 hover:shadow-lg transition-all active:scale-95 relative group">
               <div class="bg-green-50 w-12 h-12 rounded-2xl flex items-center justify-center text-green-600 mb-3 group-hover:scale-110 transition-transform duration-300">
                 <component :is="MessageCircleIcon" size="24" stroke-width="2" />
               </div>
               <h3 class="font-bold text-slate-700 text-sm mb-0.5">WA Link</h3>
-              <p class="text-[10px] text-slate-400 font-medium">Auto Chat</p>
+              <p class="text-[10px] text-slate-400 font-medium">Link Auto Chat</p>
             </router-link>
 
-            <router-link to="/apps/marketing/food-delivery" class="bg-white p-4 rounded-3xl shadow-[0_4px_20px_-10px_rgba(0,0,0,0.08)] border border-slate-50 hover:border-green-100 hover:shadow-lg transition-all active:scale-95 relative group">
-              <div class="bg-green-50 w-12 h-12 rounded-2xl flex items-center justify-center text-green-600 mb-3 group-hover:scale-110 transition-transform duration-300">
-                <component :is="CalculatorIcon" size="24" stroke-width="2" />
+             <!-- Simulasi Kredit -->
+             <router-link to="/apps/utilities/credit-simulator" class="bg-white p-4 rounded-3xl shadow-[0_4px_20px_-10px_rgba(0,0,0,0.08)] border border-slate-50 hover:border-violet-100 hover:shadow-lg transition-all active:scale-95 relative group">
+               <div class="bg-violet-50 w-12 h-12 rounded-2xl flex items-center justify-center text-violet-600 mb-3 group-hover:scale-110 transition-transform duration-300">
+                <component :is="MoreHorizontalIcon" size="24" stroke-width="2" />
               </div>
-              <h3 class="font-bold text-slate-700 text-sm mb-0.5">Harga Ojol</h3>
-              <p class="text-[10px] text-slate-400 font-medium">Anti Rugi</p>
+              <h3 class="font-bold text-slate-700 text-sm mb-0.5">Kredit</h3>
+              <p class="text-[10px] text-slate-400 font-medium">Simulasi Cicilan</p>
             </router-link>
+          </div>
+        </section>
 
-            <router-link to="/apps/marketing/qr-menu" class="bg-white p-4 rounded-3xl shadow-[0_4px_20px_-10px_rgba(0,0,0,0.08)] border border-slate-50 hover:border-green-100 hover:shadow-lg transition-all active:scale-95 relative group">
-               <div class="bg-green-50 w-12 h-12 rounded-2xl flex items-center justify-center text-green-600 mb-3 group-hover:scale-110 transition-transform duration-300">
-                <component :is="QrCodeIcon" size="24" stroke-width="2" />
-              </div>
-              <h3 class="font-bold text-slate-700 text-sm mb-0.5">QR Menu</h3>
-              <p class="text-[10px] text-slate-400 font-medium">Digital</p>
-            </router-link>
-
-            <router-link to="/apps/marketing/business-card" class="bg-white p-4 rounded-3xl shadow-[0_4px_20px_-10px_rgba(0,0,0,0.08)] border border-slate-50 hover:border-violet-100 hover:shadow-lg transition-all active:scale-95 relative group">
-              <div class="bg-violet-50 w-12 h-12 rounded-2xl flex items-center justify-center text-violet-600 mb-3 group-hover:scale-110 transition-transform duration-300">
-                <component :is="ContactIcon" size="24" stroke-width="2" />
-              </div>
-              <h3 class="font-bold text-slate-700 text-sm mb-0.5">Kartu Nama</h3>
-              <p class="text-[10px] text-slate-400 font-medium">Instan</p>
-            </router-link>
-
-            <router-link to="/apps/marketing/link-bio" class="bg-white p-4 rounded-3xl shadow-[0_4px_20px_-10px_rgba(0,0,0,0.08)] border border-slate-50 hover:border-indigo-100 hover:shadow-lg transition-all active:scale-95 relative group">
-               <div class="bg-gray-800 w-12 h-12 rounded-2xl flex items-center justify-center text-white mb-3 group-hover:scale-110 transition-transform duration-300">
-                <component :is="LinkIcon" size="24" stroke-width="2" />
-              </div>
-              <h3 class="font-bold text-slate-700 text-sm mb-0.5">Link Bio</h3>
-              <p class="text-[10px] text-slate-400 font-medium">Mini Web</p>
-            </router-link>
-
-             <router-link to="/apps/marketing/banner" class="bg-white p-4 rounded-3xl shadow-[0_4px_20px_-10px_rgba(0,0,0,0.08)] border border-slate-50 hover:border-purple-100 hover:shadow-lg transition-all active:scale-95 relative group">
-               <div class="bg-purple-50 w-12 h-12 rounded-2xl flex items-center justify-center text-purple-600 mb-3 group-hover:scale-110 transition-transform duration-300">
-                <component :is="ImageIcon" size="24" stroke-width="2" />
-              </div>
-              <h3 class="font-bold text-slate-700 text-sm mb-0.5">Banner</h3>
-              <p class="text-[10px] text-slate-400 font-medium">Status WA</p>
-            </router-link>
-
-            <router-link to="/apps/marketing/copywriting" class="bg-white p-4 rounded-3xl shadow-[0_4px_20px_-10px_rgba(0,0,0,0.08)] border border-slate-50 hover:border-teal-100 hover:shadow-lg transition-all active:scale-95 relative group">
-               <div class="bg-teal-50 w-12 h-12 rounded-2xl flex items-center justify-center text-teal-600 mb-3 group-hover:scale-110 transition-transform duration-300">
-                <component :is="MessageSquareIcon" size="24" stroke-width="2" />
-              </div>
-              <h3 class="font-bold text-slate-700 text-sm mb-0.5">Auto Text</h3>
-              <p class="text-[10px] text-slate-400 font-medium">Template</p>
-            </router-link>
-
+        <!-- Category 3: Marketing & Sales -->
+        <section>
+          <div class="flex items-center justify-between mb-4 px-1">
+            <h2 class="font-bold text-slate-800 text-base">Penunjang Jualan</h2>
+            <component :is="MegaphoneIcon" size="18" class="text-green-500 bg-green-50 p-0.5 rounded" />
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+             <!-- Diskon Planner -->
              <router-link to="/apps/marketing/discount" class="bg-white p-4 rounded-3xl shadow-[0_4px_20px_-10px_rgba(0,0,0,0.08)] border border-slate-50 hover:border-pink-100 hover:shadow-lg transition-all active:scale-95 relative group">
                <div class="bg-pink-50 w-12 h-12 rounded-2xl flex items-center justify-center text-pink-600 mb-3 group-hover:scale-110 transition-transform duration-300">
                 <component :is="PercentIcon" size="24" stroke-width="2" />
@@ -222,52 +162,55 @@
               <h3 class="font-bold text-slate-700 text-sm mb-0.5">Diskon</h3>
               <p class="text-[10px] text-slate-400 font-medium">Hitung Promo</p>
             </router-link>
+
+            <!-- Harga Ojol -->
+            <router-link to="/apps/marketing/food-delivery" class="bg-white p-4 rounded-3xl shadow-[0_4px_20px_-10px_rgba(0,0,0,0.08)] border border-slate-50 hover:border-emerald-100 hover:shadow-lg transition-all active:scale-95 relative group">
+              <div class="bg-emerald-50 w-12 h-12 rounded-2xl flex items-center justify-center text-emerald-600 mb-3 group-hover:scale-110 transition-transform duration-300">
+                <component :is="CalculatorIcon" size="24" stroke-width="2" />
+              </div>
+              <h3 class="font-bold text-slate-700 text-sm mb-0.5">Harga Ojol</h3>
+              <p class="text-[10px] text-slate-400 font-medium">Anti Rugi Potongan</p>
+            </router-link>
+
+            <!-- QR Code All-In-One -->
+            <router-link to="/apps/marketing/qr-code" class="bg-white p-4 rounded-3xl shadow-[0_4px_20px_-10px_rgba(0,0,0,0.08)] border border-slate-50 hover:border-blue-100 hover:shadow-lg transition-all active:scale-95 relative group col-span-2">
+               <div class="flex items-center gap-4">
+                  <div class="bg-blue-50 w-12 h-12 rounded-2xl flex items-center justify-center text-blue-600 group-hover:scale-105 transition-transform duration-300 shrink-0">
+                    <component :is="QrCodeIcon" size="24" stroke-width="2" />
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-slate-700 text-base mb-0.5">QR Code Serbaguna</h3>
+                    <p class="text-[11px] text-slate-400 font-medium leading-tight">Buat QR untuk Link, Teks, Menu, atau WiFi Otomatis.</p>
+                  </div>
+               </div>
+            </router-link>
           </div>
         </section>
 
-        <!-- Utilities -->
+        <!-- Category 4: Viral Loop & Engagement -->
         <section>
           <div class="flex items-center justify-between mb-4 px-1">
-             <h2 class="font-bold text-slate-800 text-base">Utilities</h2>
-             <component :is="MoreHorizontalIcon" size="18" class="text-violet-500 bg-violet-50 p-0.5 rounded" />
+             <h2 class="font-bold text-slate-800 text-base">Seru-Seruan</h2>
+             <component :is="MessageSquareIcon" size="18" class="text-violet-500 bg-violet-50 p-0.5 rounded" />
           </div>
-          <div class="grid grid-cols-4 gap-3">
-             <!-- Small Tools - Compact Grid -->
-            <router-link to="/apps/utilities/kitchen-timer" class="aspect-square bg-white rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center justify-center text-center active:scale-95 hover:shadow-md transition-all">
-               <div class="text-xl mb-1">⏱️</div>
-               <span class="text-[9px] font-bold text-slate-600 leading-tight">Timer</span>
+          <div class="grid grid-cols-2 gap-4">
+            <!-- Split Bill -->
+            <router-link to="/apps/utilities/bill-splitter" class="bg-white p-4 rounded-3xl shadow-[0_4px_20px_-10px_rgba(0,0,0,0.08)] border border-slate-50 hover:border-blue-100 hover:shadow-lg transition-all active:scale-95 relative group">
+               <div class="bg-blue-50 w-12 h-12 rounded-2xl flex items-center justify-center text-blue-600 mb-3 group-hover:scale-110 transition-transform duration-300">
+                <component :is="ReceiptIcon" size="24" stroke-width="2" />
+              </div>
+              <h3 class="font-bold text-slate-700 text-sm mb-0.5">Split Bill</h3>
+              <p class="text-[10px] text-slate-400 font-medium">Patungan Makan</p>
             </router-link>
 
-            <router-link to="/apps/utilities/qr-wifi" class="aspect-square bg-white rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center justify-center text-center active:scale-95 hover:shadow-md transition-all">
-               <div class="text-xl mb-1">📶</div>
-               <span class="text-[9px] font-bold text-slate-600 leading-tight">WiFi</span>
+            <!-- Random Picker -->
+             <router-link to="/apps/utilities/random-picker" class="bg-white p-4 rounded-3xl shadow-[0_4px_20px_-10px_rgba(0,0,0,0.08)] border border-slate-50 hover:border-indigo-100 hover:shadow-lg transition-all active:scale-95 relative group">
+               <div class="bg-indigo-50 w-12 h-12 rounded-2xl flex items-center justify-center text-indigo-600 mb-3 group-hover:scale-110 transition-transform duration-300">
+                <component :is="UsersIcon" size="24" stroke-width="2" />
+              </div>
+              <h3 class="font-bold text-slate-700 text-sm mb-0.5">Doorprize</h3>
+              <p class="text-[10px] text-slate-400 font-medium">Acak Pemenang</p>
             </router-link>
-
-             <router-link to="/apps/utilities/simple-todo" class="aspect-square bg-white rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center justify-center text-center active:scale-95 hover:shadow-md transition-all">
-               <div class="text-xl mb-1">📝</div>
-               <span class="text-[9px] font-bold text-slate-600 leading-tight">Catat</span>
-            </router-link>
-            
-             <router-link to="/apps/utilities/bill-splitter" class="aspect-square bg-white rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center justify-center text-center active:scale-95 hover:shadow-md transition-all">
-               <div class="text-xl mb-1">💸</div>
-               <span class="text-[9px] font-bold text-slate-600 leading-tight">Split</span>
-            </router-link>
-
-             <router-link to="/apps/utilities/credit-simulator" class="aspect-square bg-white rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center justify-center text-center active:scale-95 hover:shadow-md transition-all">
-               <div class="text-xl mb-1">🏦</div>
-               <span class="text-[9px] font-bold text-slate-600 leading-tight">Kredit</span>
-            </router-link>
-
-             <router-link to="/apps/utilities/random-picker" class="aspect-square bg-white rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center justify-center text-center active:scale-95 hover:shadow-md transition-all">
-               <div class="text-xl mb-1">🎁</div>
-               <span class="text-[9px] font-bold text-slate-600 leading-tight">Acak</span>
-            </router-link>
-            
-            <router-link to="/apps/utilities/fabric-calc" class="aspect-square bg-white rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center justify-center text-center active:scale-95 hover:shadow-md transition-all">
-               <div class="text-xl mb-1">✂️</div>
-               <span class="text-[9px] font-bold text-slate-600 leading-tight">Kain</span>
-            </router-link>
-
           </div>
         </section>
 
@@ -300,16 +243,11 @@ import {
   Layers as LayersIcon,
   BarChart2 as BarChartIcon,
   QrCode as QrCodeIcon,
-  Contact as ContactIcon,
-  Link as LinkIcon,
-  Image as ImageIcon,
-  MessageSquare as MessageSquareIcon,
   Percent as PercentIcon,
   ClipboardList as ClipboardIcon,
-  Truck as TruckIcon,
-  ChefHat as ChefHatIcon,
-  CheckSquare as CheckSquareIcon,
   MoreHorizontal as MoreHorizontalIcon,
-  Book as BookIcon
+  Book as BookIcon,
+  Users as UsersIcon,
+  MessageSquare as MessageSquareIcon
 } from 'lucide-vue-next';
 </script>

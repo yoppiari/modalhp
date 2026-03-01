@@ -75,7 +75,8 @@ export default defineConfig({
     }
   },
   server: {
-    port: 8081, // Ensure matches current running port
+    port: 8082,
+    strictPort: true,
     proxy: {
       '/api': {
         target: 'http://localhost:3005',

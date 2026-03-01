@@ -36,9 +36,17 @@ echo "Starting Frontend Server..."
 npm run dev &
 FRONTEND_PID=$!
 
-echo "Both servers are running."
+# Start Astro Blog
+echo "Starting Astro Blog Server..."
+cd blog
+npm run dev &
+ASTRO_PID=$!
+cd ..
+
+echo "All servers are running."
 echo "Backend PID: $BACKEND_PID"
 echo "Frontend PID: $FRONTEND_PID"
+echo "Blog PID:   $ASTRO_PID"
 echo "Press Ctrl+C to stop."
 
 wait

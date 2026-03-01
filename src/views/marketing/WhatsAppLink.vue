@@ -1,8 +1,8 @@
 <template>
   <div class="bg-slate-50 min-h-screen pb-24">
     <div class="bg-green-600 text-white p-6 rounded-b-[2.5rem] shadow-lg mb-6">
-      <h2 class="text-2xl font-bold">WA Link Maker</h2>
-      <p class="text-green-100 text-sm opacity-90">Bikin link chat WhatsApp instan</p>
+      <h2 class="text-2xl font-bold">Cara Membuat Link WA Me</h2>
+      <p class="text-green-100 text-sm opacity-90">Bikin link chat WhatsApp instan dengan mudah</p>
     </div>
 
     <div class="px-4 max-w-md mx-auto space-y-6">

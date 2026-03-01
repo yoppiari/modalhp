@@ -1,8 +1,8 @@
 <template>
   <div class="bg-slate-50 min-h-screen pb-24">
     <div class="bg-orange-500 text-white p-6 rounded-b-[2.5rem] shadow-lg mb-6 sticky top-0 z-10">
-      <h2 class="text-2xl font-bold">HPP Calculator</h2>
-      <p class="text-orange-100 text-sm opacity-90">Hitung modal pokok produksi dengan detail</p>
+      <h2 class="text-2xl font-bold">Cara Hitung HPP Makanan</h2>
+      <p class="text-orange-100 text-sm opacity-90">Hitung modal pokok produksi dengan detail & mudah</p>
     </div>
     
     <div class="px-4 max-w-md mx-auto space-y-5">
