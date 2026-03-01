@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white rounded-xl shadow p-4">
-    <div class="flex items-center justify-between mb-4">
+    <div class="flex items-center justify-between mb-3">
       <div>
         <h3 class="font-bold text-lg leading-tight">Offline Tools Manager</h3>
         <p class="text-xs text-slate-500 mt-1">Download agar bisa dipakai tanpa internet.</p>
@@ -13,6 +13,24 @@
         <span v-if="isDownloadingAll">Loading...</span>
         <span v-else>Download Semua</span>
       </button>
+    </div>
+
+    <!-- Storage Indicator -->
+    <div v-if="storageInfo.supported" class="mb-4 bg-slate-50 rounded-lg p-3">
+      <div class="flex items-center justify-between mb-1.5">
+        <span class="text-[11px] font-semibold text-slate-600">💾 Penyimpanan Offline</span>
+        <span class="text-[11px] text-slate-500">{{ storageInfo.usedText }} / {{ storageInfo.totalText }}</span>
+      </div>
+      <div class="w-full bg-slate-200 rounded-full h-2 overflow-hidden">
+        <div 
+          class="h-2 rounded-full transition-all duration-500"
+          :class="storageInfo.percent > 80 ? 'bg-red-500' : storageInfo.percent > 50 ? 'bg-amber-500' : 'bg-emerald-500'"
+          :style="{ width: storageInfo.percent + '%' }"
+        ></div>
+      </div>
+      <p class="text-[10px] mt-1" :class="storageInfo.percent > 80 ? 'text-red-500' : 'text-slate-400'">
+        {{ storageInfo.percent > 80 ? '⚠ Penyimpanan hampir penuh' : 'Sisa ' + storageInfo.freeText + ' tersedia' }}
+      </p>
     </div>
     
     <div class="space-y-3">
@@ -39,13 +57,20 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, reactive, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 
 const STORAGE_KEY = 'modalhp-offline-tools';
 const router = useRouter();
 const tools = ref([]);
 const isDownloadingAll = ref(false);
+const storageInfo = reactive({
+  supported: false,
+  usedText: '–',
+  totalText: '–',
+  freeText: '–',
+  percent: 0
+});
 
 const APP_DETAILS = {
   Cashier: { name: 'Kasir Warung', desc: 'Mulai Jualan' },
@@ -63,6 +88,30 @@ const APP_DETAILS = {
   QRCodeGenerator: { name: 'QR Code Serbaguna', desc: 'Buat Kode QR Cepat' },
   BillSplitter: { name: 'Split Bill', desc: 'Patungan Makan' },
   RandomPicker: { name: 'Doorprize', desc: 'Acak Pemenang' }
+};
+
+// Format bytes to human-readable string
+const formatBytes = (bytes) => {
+  if (bytes < 1024) return bytes + ' B';
+  if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+  if (bytes < 1024 * 1024 * 1024) return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+  return (bytes / (1024 * 1024 * 1024)).toFixed(1) + ' GB';
+};
+
+// Update storage usage info using Storage API
+const updateStorageInfo = async () => {
+  if (!navigator.storage?.estimate) return;
+  storageInfo.supported = true;
+  try {
+    const { usage, quota } = await navigator.storage.estimate();
+    const free = quota - usage;
+    storageInfo.usedText = formatBytes(usage);
+    storageInfo.totalText = formatBytes(quota);
+    storageInfo.freeText = formatBytes(free);
+    storageInfo.percent = Math.round((usage / quota) * 100);
+  } catch {
+    storageInfo.supported = false;
+  }
 };
 
 // Read downloaded tool IDs from localStorage (instant, synchronous)
@@ -105,6 +154,7 @@ onMounted(() => {
     .sort((a, b) => orderedKeys.indexOf(a.id) - orderedKeys.indexOf(b.id));
 
   tools.value = mappedTools;
+  updateStorageInfo();
 });
 
 const downloadTool = async (tool) => {
@@ -116,6 +166,7 @@ const downloadTool = async (tool) => {
     tool.downloaded = true;
     tool.status = 'Offline Ready';
     markAsDownloaded(tool.id);
+    await updateStorageInfo();
   } catch (e) {
     console.error(e);
     tool.status = 'Error';
@@ -134,5 +185,3 @@ const downloadAllTools = async () => {
   isDownloadingAll.value = false;
 };
 </script>
-
-
