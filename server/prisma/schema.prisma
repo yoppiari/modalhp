@@ -35,3 +35,24 @@ model CloudData {
   dataBlob  String   // JSON string of the backup
   updatedAt DateTime @updatedAt
 }
+
+model FeatureRequest {
+  id          String   @id @default(uuid())
+  title       String
+  description String
+  status      String   @default("PENDING") // PENDING, PLANNED, IN_PROGRESS, COMPLETED
+  authorEmail String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  votes       FeatureVote[]
+}
+
+model FeatureVote {
+  id               String         @id @default(uuid())
+  featureRequestId String
+  featureRequest   FeatureRequest @relation(fields: [featureRequestId], references: [id], onDelete: Cascade)
+  voterEmail       String?        // Identifier for anonymous or logged in vote
+  createdAt        DateTime       @default(now())
+
+  @@unique([featureRequestId, voterEmail])
+}

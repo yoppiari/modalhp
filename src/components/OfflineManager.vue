@@ -1,18 +1,33 @@
 <template>
   <div class="bg-white rounded-xl shadow p-4">
-    <h3 class="font-bold text-lg mb-4">Offline Tools Manager</h3>
-    <p class="text-sm text-slate-500 mb-4">Download tools agar bisa digunakan tanpa internet.</p>
+    <div class="flex items-center justify-between mb-4">
+      <div>
+        <h3 class="font-bold text-lg leading-tight">Offline Tools Manager</h3>
+        <p class="text-xs text-slate-500 mt-1">Download agar bisa dipakai tanpa internet.</p>
+      </div>
+      <button 
+        @click="downloadAllTools" 
+        :disabled="isDownloadingAll"
+        class="bg-indigo-600 text-white px-3 py-1.5 rounded-lg text-xs font-bold disabled:opacity-50 hover:bg-indigo-700 transition"
+      >
+        <span v-if="isDownloadingAll">Loading...</span>
+        <span v-else>Download Semua</span>
+      </button>
+    </div>
     
     <div class="space-y-3">
-      <div v-for="tool in tools" :key="tool.id" class="flex items-center justify-between border-b border-slate-100 pb-2 last:border-0">
+      <div v-for="tool in tools" :key="tool.id" class="flex items-center justify-between border-b border-slate-100 pb-3 last:border-0">
         <div>
-          <p class="font-semibold text-sm">{{ tool.name }}</p>
-          <p class="text-[10px] text-slate-400">{{ tool.status }}</p>
+          <p class="font-bold text-sm text-slate-700">{{ tool.name }}</p>
+          <p class="text-[10px] text-slate-500 mb-0.5">{{ tool.description }}</p>
+          <p class="text-[10px]" :class="tool.downloaded ? 'text-emerald-500 font-semibold' : 'text-slate-400'">
+            {{ tool.status }}
+          </p>
         </div>
         <button 
           @click="downloadTool(tool)" 
           :disabled="tool.downloaded || tool.loading"
-          class="bg-blue-100 text-blue-700 p-2 rounded-lg text-xs font-bold disabled:opacity-50 disabled:bg-slate-100 disabled:text-slate-400"
+          class="bg-indigo-50 text-indigo-700 px-3 py-1.5 rounded-lg text-xs font-bold disabled:opacity-50 disabled:bg-slate-50 disabled:text-slate-400 min-w-[80px] text-center"
         >
           <span v-if="tool.downloaded">✓ Ready</span>
           <span v-else-if="tool.loading">...</span>
@@ -29,35 +44,54 @@ import { useRouter } from 'vue-router';
 
 const router = useRouter();
 const tools = ref([]);
+const isDownloadingAll = ref(false);
 
-onMounted(() => {
-  // Filter routes that are actual tools
-  tools.value = router.getRoutes()
-    .filter(r => r.path.startsWith('/apps/') && r.name !== 'Login' && r.name !== 'Dashboard' && r.name !== 'Settings')
-    .map(r => ({
-      id: r.name,
-      name: formatName(r.name),
-      status: 'Cloud Only', // Default
-      downloaded: false, // In a real app, check cache existence
-      loader: r.components?.default
-    }));
-});
-
-const formatName = (name) => {
-  return name.replace(/([A-Z])/g, ' $1').trim(); // CamelCase to Spaced
+const APP_DETAILS = {
+  Cashier: { name: 'Kasir Warung', desc: 'Mulai Jualan' },
+  ProductList: { name: 'Produk', desc: 'Kelola Stok' },
+  DailyReport: { name: 'Laporan', desc: 'Cek Omzet' },
+  DebtManager: { name: 'Hutang', desc: 'Catat Kasbon' },
+  InvoiceGenerator: { name: 'Kuitansi', desc: 'Cetak Struk' },
+  StockCard: { name: 'Kartu Stok', desc: 'Mutasi Barang' },
+  Payroll: { name: 'Slip Gaji', desc: 'Hitung Gaji' },
+  HPPCalculator: { name: 'Cek HPP', desc: 'Modal Kuliner' },
+  WhatsAppLink: { name: 'WA Link', desc: 'Link Auto Chat' },
+  CreditSimulator: { name: 'Kredit', desc: 'Simulasi Cicilan' },
+  DiscountPlanner: { name: 'Diskon', desc: 'Hitung Promo' },
+  FoodDeliveryPricing: { name: 'Harga Ojol', desc: 'Anti Rugi Potongan' },
+  QRCodeGenerator: { name: 'QR Code Serbaguna', desc: 'Buat Kode QR Cepat' },
+  BillSplitter: { name: 'Split Bill', desc: 'Patungan Makan' },
+  RandomPicker: { name: 'Doorprize', desc: 'Acak Pemenang' }
 };
 
+onMounted(() => {
+  const routes = router.getRoutes();
+  
+  // Create an array with the same order as APP_DETAILS (keys)
+  const orderedKeys = Object.keys(APP_DETAILS);
+  
+  const mappedTools = routes
+    .filter(r => APP_DETAILS[r.name])
+    .map(r => ({
+      id: r.name,
+      name: APP_DETAILS[r.name].name,
+      description: APP_DETAILS[r.name].desc,
+      status: 'Cloud Only',
+      downloaded: false,
+      loading: false,
+      loader: r.components?.default
+    }))
+    .sort((a, b) => orderedKeys.indexOf(a.id) - orderedKeys.indexOf(b.id));
+
+  tools.value = mappedTools;
+});
+
 const downloadTool = async (tool) => {
-  if (!tool.loader) return;
+  if (!tool.loader || typeof tool.loader !== 'function') return;
   
   tool.loading = true;
   try {
-    // Trigger dynamic import
     await tool.loader();
-    
-    // In a real PWA, you might also want to fetch specific assets manually if import() isn't enough
-    // But with our StaleWhileRevalidate strategy on 'tool_*.js', this works.
-    
     tool.downloaded = true;
     tool.status = 'Offline Ready';
   } catch (e) {
@@ -66,5 +100,15 @@ const downloadTool = async (tool) => {
   } finally {
     tool.loading = false;
   }
+};
+
+const downloadAllTools = async () => {
+  isDownloadingAll.value = true;
+  for (const tool of tools.value) {
+    if (!tool.downloaded) {
+      await downloadTool(tool);
+    }
+  }
+  isDownloadingAll.value = false;
 };
 </script>

@@ -38,3 +38,33 @@ export async function sendOtpEmail(email, otp) {
         throw err;
     }
 }
+
+export async function sendSupportEmail(name, email, message, type = 'CS') {
+    const toEmail = 'tickets@modalhp.p.tawk.email';
+    const subject = type === 'CS' ? `[Bantuan CS] ${name}` : `[Request Fitur] ${name}`;
+
+    if (!process.env.RESEND_API_KEY) {
+        console.warn("RESEND_API_KEY is missing. Support msg:", message);
+        return { success: true, simulated: true };
+    }
+
+    try {
+        const { data, error } = await resend.emails.send({
+            from: 'ModalHP App <onboarding@resend.dev>',
+            to: toEmail,
+            subject,
+            html: `<p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><hr/><p>${message.replace(/\\n/g, '<br/>')}</p>`,
+            reply_to: email
+        });
+
+        if (error) {
+            console.error('Resend Error:', error);
+            throw error;
+        }
+
+        return data;
+    } catch (err) {
+        console.error('Support email failed:', err);
+        throw err;
+    }
+}

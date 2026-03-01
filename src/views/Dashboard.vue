@@ -1,5 +1,5 @@
 <template>
-  <div class="px-0 pb-6 max-w-md mx-auto min-h-screen bg-slate-50">
+  <div class="px-0 max-w-md mx-auto min-h-screen bg-slate-50">
     
     <!-- Sticky Header -->
     <div class="sticky top-0 z-30 bg-white/80 backdrop-blur-md border-b border-slate-100/50 px-4 py-3 mb-4 transition-all duration-300">
@@ -26,7 +26,7 @@
       </div>
 
       <!-- Categories -->
-      <div class="space-y-8 pb-20">
+      <div class="space-y-8">
         
         <!-- Category 1: Core Ecosystem (Manajemen Utama Warung) -->
         <section>

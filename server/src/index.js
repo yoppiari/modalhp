@@ -39,6 +39,15 @@ import { pushData, pullData } from './controllers/syncController.js';
 app.post('/api/sync/push', pushData);
 app.get('/api/sync/pull', pullData);
 
+import { submitSupportRequest } from './controllers/supportController.js';
+import { getFeatures, createFeature, toggleVote } from './controllers/featureController.js';
+
+// Support & Features
+app.post('/api/support', submitSupportRequest);
+app.get('/api/features', getFeatures);
+app.post('/api/features', createFeature);
+app.post('/api/features/:id/vote', toggleVote);
+
 // 404 Handler
 app.use((req, res, next) => {
     console.log(`[DEBUG] 404 Not Found: ${req.method} ${req.url}`);

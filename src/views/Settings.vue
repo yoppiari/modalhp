@@ -28,6 +28,23 @@
        </div>
     </div>
 
+    <!-- Cloud Storage -->
+    <div class="bg-white border border-slate-100 rounded-xl p-4 mb-6 shadow-sm">
+       <div class="flex items-center justify-between mb-2">
+         <h3 class="font-bold text-slate-800">Cloud Storage</h3>
+         <div class="flex items-center gap-2">
+           <span class="bg-slate-100 text-slate-500 text-xs px-2 py-1 rounded-full font-medium">Belum Aktif</span>
+           <span class="bg-indigo-100 text-indigo-700 text-xs px-2 py-1 rounded-full font-medium">Rp25.000/bln</span>
+         </div>
+       </div>
+       <p class="text-sm text-slate-600 mb-4">
+         Unlimited auto backup agar tidak hilang semua yang disimpan di hp (untuk berjaga agar ketika memori penuh tetap aman).
+       </p>
+       <button disabled class="w-full text-center bg-slate-100 text-slate-400 font-medium py-2 px-4 rounded-lg cursor-not-allowed">
+         Segera Hadir
+       </button>
+    </div>
+
     <!-- Info -->
     <div class="text-center text-xs text-slate-400 mt-8">
       <p>ModalHP v2.0.0</p>
