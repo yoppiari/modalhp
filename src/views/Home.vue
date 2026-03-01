@@ -12,7 +12,7 @@
         </div>
         
         <div class="flex items-center gap-4">
-          <a href="http://localhost:8082/apps/login" class="bg-slate-900 hover:bg-slate-800 text-white text-sm font-bold py-2.5 px-6 rounded-full shadow-lg shadow-slate-200 transition-all hover:-translate-y-0.5 inline-flex items-center gap-2">
+          <a href="/apps/login" class="bg-slate-900 hover:bg-slate-800 text-white text-sm font-bold py-2.5 px-6 rounded-full shadow-lg shadow-slate-200 transition-all hover:-translate-y-0.5 inline-flex items-center gap-2">
             Login <span class="hidden sm:inline">Sekarang</span>
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
           </a>
@@ -240,7 +240,7 @@
           <p class="text-slate-600 text-sm md:text-base mb-6 max-w-2xl mx-auto leading-relaxed">
             Tim ModalHP siap membuatkan aplikasi kustom khusus untuk kebutuhan usaha Anda secara <strong class="text-blue-700">GRATIS!</strong> Bayangkan bayar sekali hari ini, dan terus dapat update fitur seumur hidup.
           </p>
-          <a href="http://localhost:8082/apps/login" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg shadow-blue-200 transition-all hover:-translate-y-0.5 text-sm md:text-base">
+          <a href="/apps/login" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg shadow-blue-200 transition-all hover:-translate-y-0.5 text-sm md:text-base">
             Request Aplikasi Baru
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
           </a>
@@ -267,7 +267,7 @@
             </p>
             
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-               <a href="http://localhost:8082/apps/login" class="bg-white text-slate-900 hover:bg-slate-50 font-black py-4 px-10 rounded-2xl shadow-[0_0_40px_rgba(255,255,255,0.3)] transition-all hover:scale-105 text-base md:text-lg flex items-center justify-center gap-2">
+               <a href="/apps/login" class="bg-white text-slate-900 hover:bg-slate-50 font-black py-4 px-10 rounded-2xl shadow-[0_0_40px_rgba(255,255,255,0.3)] transition-all hover:scale-105 text-base md:text-lg flex items-center justify-center gap-2">
                  Daftar Sekarang
                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                </a>
