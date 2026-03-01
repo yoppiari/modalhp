@@ -6,9 +6,14 @@ services:
       - web
     labels:
       - "traefik.enable=true"
-      # Route based on the IP or a Domain (using HostRegexp for now to catch the IP)
-      - "traefik.http.routers.toolsumkm.rule=Host(`72.62.127.3`)"
+      # HTTP router - matches domain, www, and IP
+      - "traefik.http.routers.toolsumkm.rule=Host(`modalhp.com`) || Host(`www.modalhp.com`) || Host(`72.62.127.3`)"
       - "traefik.http.routers.toolsumkm.entrypoints=web"
+      # HTTPS router - matches domain, www, and IP
+      - "traefik.http.routers.toolsumkm-secure.rule=Host(`modalhp.com`) || Host(`www.modalhp.com`) || Host(`72.62.127.3`)"
+      - "traefik.http.routers.toolsumkm-secure.entrypoints=websecure"
+      - "traefik.http.routers.toolsumkm-secure.tls=true"
+      # Service port
       - "traefik.http.services.toolsumkm.loadbalancer.server.port=80"
 
 networks:
