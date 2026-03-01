@@ -42,6 +42,7 @@
 import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 
+const STORAGE_KEY = 'modalhp-offline-tools';
 const router = useRouter();
 const tools = ref([]);
 const isDownloadingAll = ref(false);
@@ -64,47 +65,46 @@ const APP_DETAILS = {
   RandomPicker: { name: 'Doorprize', desc: 'Acak Pemenang' }
 };
 
-// Check if a tool's JS chunk is already in the SW cache
-const isToolCached = async (toolId) => {
+// Read downloaded tool IDs from localStorage (instant, synchronous)
+const getDownloadedIds = () => {
   try {
-    const cache = await caches.open('umkm-tools');
-    const keys = await cache.keys();
-    // Tool chunks have filenames like tool_finance_pos_Cashier-xxx.js
-    return keys.some(req => req.url.includes(`tool_`) && req.url.includes(toolId));
+    return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
   } catch {
-    return false;
+    return [];
   }
 };
 
-onMounted(async () => {
-  const routes = router.getRoutes();
+// Save a tool ID as downloaded to localStorage
+const markAsDownloaded = (toolId) => {
+  const ids = getDownloadedIds();
+  if (!ids.includes(toolId)) {
+    ids.push(toolId);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(ids));
+  }
+};
 
-  // Create an array with the same order as APP_DETAILS (keys)
+onMounted(() => {
+  const routes = router.getRoutes();
   const orderedKeys = Object.keys(APP_DETAILS);
+  const downloadedIds = getDownloadedIds();
   
   const mappedTools = routes
     .filter(r => APP_DETAILS[r.name])
-    .map(r => ({
-      id: r.name,
-      name: APP_DETAILS[r.name].name,
-      description: APP_DETAILS[r.name].desc,
-      status: 'Cloud Only',
-      downloaded: false,
-      loading: false,
-      loader: r.components?.default
-    }))
+    .map(r => {
+      const isDownloaded = downloadedIds.includes(r.name);
+      return {
+        id: r.name,
+        name: APP_DETAILS[r.name].name,
+        description: APP_DETAILS[r.name].desc,
+        status: isDownloaded ? 'Offline Ready' : 'Cloud Only',
+        downloaded: isDownloaded,
+        loading: false,
+        loader: r.components?.default
+      };
+    })
     .sort((a, b) => orderedKeys.indexOf(a.id) - orderedKeys.indexOf(b.id));
 
   tools.value = mappedTools;
-
-  // Check cache status for each tool
-  for (const tool of tools.value) {
-    const cached = await isToolCached(tool.id);
-    if (cached) {
-      tool.downloaded = true;
-      tool.status = 'Offline Ready';
-    }
-  }
 });
 
 const downloadTool = async (tool) => {
@@ -115,6 +115,7 @@ const downloadTool = async (tool) => {
     await tool.loader();
     tool.downloaded = true;
     tool.status = 'Offline Ready';
+    markAsDownloaded(tool.id);
   } catch (e) {
     console.error(e);
     tool.status = 'Error';
@@ -133,4 +134,5 @@ const downloadAllTools = async () => {
   isDownloadingAll.value = false;
 };
 </script>
+
 
