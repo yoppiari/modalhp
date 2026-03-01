@@ -1,0 +1,38 @@
+services:
+  api:
+    build: .
+    restart: always
+    networks:
+      - web
+    volumes:
+      - api-data:/app/data
+    environment:
+      - DATABASE_URL=file:/app/data/prod.db
+      - BREVO_API_KEY=${BREVO_API_KEY}
+      - PORT=3000
+    labels:
+      - "traefik.enable=true"
+      # HTTP router
+      - "traefik.http.routers.modalhp-api.rule=(Host(`modalhp.com`) || Host(`www.modalhp.com`)) && PathPrefix(`/api`)"
+      - "traefik.http.routers.modalhp-api.entrypoints=web"
+      - "traefik.http.routers.modalhp-api.priority=100"
+      # HTTPS router
+      - "traefik.http.routers.modalhp-api-secure.rule=(Host(`modalhp.com`) || Host(`www.modalhp.com`)) && PathPrefix(`/api`)"
+      - "traefik.http.routers.modalhp-api-secure.entrypoints=websecure"
+      - "traefik.http.routers.modalhp-api-secure.tls=true"
+      - "traefik.http.routers.modalhp-api-secure.priority=100"
+      # Webhooks router (HTTPS)
+      - "traefik.http.routers.modalhp-webhooks-secure.rule=(Host(`modalhp.com`) || Host(`www.modalhp.com`)) && PathPrefix(`/webhooks`)"
+      - "traefik.http.routers.modalhp-webhooks-secure.entrypoints=websecure"
+      - "traefik.http.routers.modalhp-webhooks-secure.tls=true"
+      - "traefik.http.routers.modalhp-webhooks-secure.priority=100"
+      # Service port
+      - "traefik.http.services.modalhp-api.loadbalancer.server.port=3000"
+
+volumes:
+  api-data:
+
+
+networks:
+  web:
+    external: true
