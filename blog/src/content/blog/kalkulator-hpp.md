@@ -51,7 +51,7 @@ Anda hanya perlu memasukkan data bahan baku Anda, dan aplikasi kami akan langsun
 - Total Modal Pokok
 - Harga Jual Ideal (berdasarkan target margin *profit* Anda)
 
-👉 **[Klik Disini Untuk Mencoba Kalkulator HPP Kami](/kalkulator)** 👈
+👉 **[Buka Halaman Utama ModalHP untuk Menggunakan Kalkulator HPP](https://modalhp.com/)** 👈
 
 ---
 

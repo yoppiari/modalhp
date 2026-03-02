@@ -12,6 +12,8 @@ const routes = [
     // Public Marketing Home
     { path: '/', name: 'Home', component: Home },
 
+    // SEO & Feature Landing Pages (Public)
+    { path: '/kalkulator', name: 'PublicKalkulator', component: loadTool('operations', 'HPPCalculator') },
 
     // Auth
     { path: '/apps/login', name: 'Login', component: Login, meta: { requiresGuest: true } },
