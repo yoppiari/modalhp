@@ -9,7 +9,7 @@ Banyak pelaku bisnis UMKM yang merasa dagangannya laris manis, omzetnya puluhan 
 
 Mengapa hal ini sering terjadi? Salah satu penyebab paling umum adalah **salah dalam menghitung HPP (Harga Pokok Penjualan)**. Jika HPP Anda salah, maka penentuan harga jual produk pasti akan ikut salah. Akibatnya, Anda mensubsidi pembeli tanpa menyadarinya.
 
-Dalam artikel ini, kita akan membahas cara menghitung HPP yang benar dengan bahasa yang mudah dipahami, plus kami sediakan **[Kalkulator HPP Gratis](/kalkulator-hpp)** untuk Anda pakai!
+Dalam artikel ini, kita akan membahas cara menghitung HPP yang benar dengan bahasa yang mudah dipahami, plus kami sediakan **[Kalkulator HPP Gratis](https://modalhp.com/)** untuk Anda pakai!
 
 ## Apa Itu HPP (Harga Pokok Penjualan)?
 

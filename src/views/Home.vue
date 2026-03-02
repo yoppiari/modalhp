@@ -55,9 +55,6 @@
             Lihat Solusinya
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
           </a>
-          <a href="/kalkulator" class="w-full sm:w-auto bg-orange-50 hover:bg-orange-100 text-orange-700 border border-orange-200 font-bold py-4 px-8 rounded-2xl shadow-sm transition-all hover:-translate-y-1 text-lg flex items-center justify-center gap-3">
-            🧮 Coba Kalkulator HPP (Gratis)
-          </a>
         </div>
       </div>
     </section>
