@@ -109,6 +109,9 @@ import { WHATSAPP_API_URL } from '@/utils/constants';
 import { db } from '../../db';
 import { liveQuery } from 'dexie';
 import { useObservable } from '@vueuse/rxjs';
+import { useBusinessProfile } from '../../composables/useBusinessProfile';
+
+const { businessProfile, hasProfile } = useBusinessProfile();
 
 const customers = useObservable(liveQuery(() => db.customers.where('total_debt').above(0).toArray())) || ref([]);
 const totalDebt = computed(() => customers.value?.reduce((sum, c) => sum + c.total_debt, 0) || 0);
@@ -195,7 +198,8 @@ const payDebt = () => {
 
 const sendBillWA = () => {
    const c = selectedCustomer.value;
-   const text = `Halo Kak ${c.name}, mau menginfokan total tagihan saat ini sebesar Rp ${formatNumber(c.total_debt)}. Mohon dibantu pelunasannya ya kak. Terima kasih! 🙏`;
+   const senderInfo = hasProfile.value ? ` ini dari *${businessProfile.value.businessName}*,` : '';
+   const text = `Halo Kak ${c.name},${senderInfo} mau menginfokan total tagihan saat ini sebesar Rp ${formatNumber(c.total_debt)}. Mohon dibantu pelunasannya ya kak. Terima kasih! 🙏`;
     window.open(`${WHATSAPP_API_URL}${c.phone.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(text)}`, '_blank');
 };
 

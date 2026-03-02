@@ -21,9 +21,11 @@
        <div v-if="selectedTrans" class="bg-white p-6 rounded-none shadow-sm border-x border-slate-200 relative receipt-paper">
           <!-- Receipt Header -->
           <div class="text-center mb-6">
-             <h3 class="font-bold text-xl text-slate-800">WARUNG BERKAH</h3>
-             <p class="text-xs text-slate-500">Jl. Contoh No. 123, Jakarta</p>
-             <p class="text-xs text-slate-500">Telp: 0812-3456-7890</p>
+             <h3 class="font-bold text-xl text-slate-800">{{ hasProfile ? businessProfile.businessName : 'WARUNG BERKAH' }}</h3>
+             <p v-if="hasProfile && businessProfile.address" class="text-xs text-slate-500">{{ businessProfile.address }}</p>
+             <p v-else-if="!hasProfile" class="text-xs text-slate-500">Jl. Contoh No. 123, Jakarta</p>
+             <p v-if="hasProfile && businessProfile.phone" class="text-xs text-slate-500">Telp: {{ businessProfile.phone }}</p>
+             <p v-else-if="!hasProfile" class="text-xs text-slate-500">Telp: 0812-3456-7890</p>
           </div>
           
           <div class="border-b-2 border-dashed border-slate-300 my-4"></div>
@@ -81,6 +83,9 @@ import { ref, watch, onMounted, computed } from 'vue';
 import { WHATSAPP_API_URL } from '@/utils/constants';
 import { db } from '../../db';
 import { jsPDF } from 'jspdf';
+import { useBusinessProfile } from '../../composables/useBusinessProfile';
+
+const { businessProfile, hasProfile } = useBusinessProfile();
 
 const transactions = ref([]);
 const selectedTransId = ref(null);
@@ -111,7 +116,8 @@ const printReceipt = () => {
 
 const shareWhatsapp = () => {
    // Generate Text Receipt
-   let text = `*WARUNG BERKAH*\n`;
+   const shopName = hasProfile.value ? businessProfile.value.businessName : 'WARUNG BERKAH';
+   let text = `*${shopName}*\n`;
    text += `--------------------------------\n`;
    text += `No: ${selectedTrans.value.invoice_number}\n`;
    text += `Tgl: ${formatDateTime(selectedTrans.value.date)}\n\n`;

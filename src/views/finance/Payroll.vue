@@ -145,7 +145,9 @@
        
        <!-- Header -->
        <div class="text-center border-b-2 border-black pb-4 mb-6">
-          <h1 class="text-2xl font-black uppercase tracking-wider mb-1">SLIP GAJI KARYAWAN</h1>
+          <h2 v-if="hasProfile" class="text-xl font-bold mb-1">{{ businessProfile.businessName }}</h2>
+          <p v-if="hasProfile && businessProfile.address" class="text-xs text-gray-600 mb-2">{{ businessProfile.address }}</p>
+          <h1 class="text-2xl font-black uppercase tracking-wider mb-1 mt-2">SLIP GAJI KARYAWAN</h1>
           <p class="text-sm font-medium text-gray-600">Periode: {{ form.period || '-' }}</p>
        </div>
 
@@ -220,6 +222,7 @@
        <div class="mt-12 flex justify-between px-4 text-center text-sm">
          <div>
            <p class="mb-16">Pemberi Kerja,</p>
+           <p class="font-bold uppercase mb-1">{{ hasProfile && businessProfile.ownerName ? businessProfile.ownerName : '(....................)' }}</p>
            <div class="border-t border-black w-32 mx-auto"></div>
          </div>
          <div>
@@ -242,6 +245,9 @@ import {
   ArrowDownRight as ArrowDownRightIcon,
   Printer as PrinterIcon
 } from 'lucide-vue-next';
+import { useBusinessProfile } from '../../composables/useBusinessProfile';
+
+const { businessProfile, hasProfile } = useBusinessProfile();
 
 // State Form
 const form = ref({
