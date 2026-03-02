@@ -2,7 +2,7 @@
 title: 'Cara Menghitung HPP (Harga Pokok Penjualan) untuk Bisnis UMKM'
 description: 'Panduan lengkap dan praktis cara menghitung HPP (Harga Pokok Penjualan) yang benar untuk bisnis UMKM agar tidak rugi. Gunakan Kalkulator HPP gratis kami.'
 pubDate: '2026-03-01'
-heroImage: '../../assets/blog-placeholder-1.jpg'
+heroImage: '../../assets/blog_hero_hpp_calculator.png'
 ---
 
 Banyak pelaku bisnis UMKM yang merasa dagangannya laris manis, omzetnya puluhan juta, tapi saat dihitung di akhir bulan... **keuntungannya ternyata minus atau sangat kecil**.

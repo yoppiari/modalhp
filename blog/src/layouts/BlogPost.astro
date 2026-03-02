@@ -9,6 +9,12 @@ import Header from '../components/Header.astro';
 type Props = CollectionEntry<'blog'>['data'];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+
+// Need to encode current URL for sharing. We use Astro.url.href.
+const shareUrl = Astro.url.href;
+const encodedUrl = encodeURIComponent(shareUrl);
+const encodedTitle = encodeURIComponent(title);
+
 ---
 
 <html lang="en">
@@ -29,72 +35,114 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			}]
 		})} />
 		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
-			}
-			.hero-image {
-				width: 100%;
-			}
-			.hero-image img {
-				display: block;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
-			}
-			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
-			}
-			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-			}
-			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
+			/* Styling standard elements in Markdown output since we don't have typography plugin */
+			.blog-content h1 { font-size: 2.25rem; font-weight: 800; margin-top: 2rem; margin-bottom: 1rem; color: #1e293b; line-height: 1.2; }
+			.blog-content h2 { font-size: 1.875rem; font-weight: 800; margin-top: 2rem; margin-bottom: 1rem; color: #1e293b; line-height: 1.3; }
+			.blog-content h3 { font-size: 1.5rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.75rem; color: #1e293b; line-height: 1.4; }
+			.blog-content p { margin-bottom: 1.25rem; }
+			.blog-content ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.25rem; }
+			.blog-content ol { list-style-type: decimal; padding-left: 1.5rem; margin-bottom: 1.25rem; }
+			.blog-content li { margin-bottom: 0.5rem; }
+			.blog-content a { color: #2563eb; font-weight: 600; text-decoration: underline; text-decoration-color: #bfdbfe; text-underline-offset: 4px; transition: all 0.2s; }
+			.blog-content a:hover { color: #1d4ed8; text-decoration-color: #2563eb; }
+			.blog-content strong { font-weight: 700; color: #0f172a; }
+			.blog-content blockquote { border-left: 4px solid #3b82f6; background-color: #eff6ff; padding: 1rem 1.25rem; margin-bottom: 1.5rem; border-radius: 0 0.75rem 0.75rem 0; font-weight: 500; color: #1e293b; }
+			.blog-content hr { margin: 2rem 0; border-color: #e2e8f0; }
 		</style>
 	</head>
 
-	<body>
+	<body class="bg-slate-50 text-slate-700 font-sans min-h-screen flex flex-col selection:bg-blue-100 selection:text-blue-900">
 		<Header />
-		<main>
-			<article>
-				<div class="hero-image">
-					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
-				</div>
-				<div class="prose">
-					<div class="title">
-						<div class="date">
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
+		
+		<main class="flex-grow pt-24 pb-16 px-6">
+			<article class="max-w-4xl mx-auto bg-white rounded-[2.5rem] shadow-sm border border-slate-100 overflow-hidden">
+				
+				<!-- Hero Image Area -->
+				{heroImage && (
+					<div class="w-full h-64 sm:h-80 md:h-96 lg:h-[450px] overflow-hidden bg-slate-100 relative">
+						<Image 
+							width={1200} 
+							height={630} 
+							src={heroImage} 
+							alt={title}
+							class="w-full h-full object-cover" 
+						/>
+						<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+						
+						<!-- Featured Title Over Image -->
+						<div class="absolute bottom-0 left-0 right-0 p-8 md:p-12 text-white">
+							<div class="flex items-center gap-3 mb-4">
+								<span class="inline-flex items-center px-3 py-1 rounded-full bg-blue-500/20 backdrop-blur-md border border-white/20 text-white text-xs font-bold uppercase tracking-wider">
+									<FormattedDate date={pubDate} />
+								</span>
+								{updatedDate && (
+									<span class="text-xs text-white/80 italic backdrop-blur-sm">
+										Diperbarui <FormattedDate date={updatedDate} />
+									</span>
+								)}
+							</div>
+							<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold leading-tight text-white mb-2 max-w-3xl drop-shadow-md">
+								{title}
+							</h1>
 						</div>
-						<h1>{title}</h1>
-						<hr />
 					</div>
-					<slot />
+				)}
+
+				<!-- Content & Share Sidebar Wrapper -->
+				<div class="flex flex-col md:flex-row p-6 md:p-12 gap-8 lg:gap-12 relative">
+					
+					<!-- Left Sidebar: Social Sharing (Sticky on Desktop) -->
+					<div class="md:w-16 shrink-0 flex flex-row md:flex-col gap-3 justify-center md:justify-start pt-2">
+						<div class="md:sticky md:top-28 space-y-4">
+							<span class="text-xs font-bold text-slate-400 uppercase tracking-widest block text-center md:-mt-6 mb-2">Share</span>
+							
+							<div class="flex md:flex-col gap-3">
+								<!-- WhatsApp -->
+								<a href={`https://api.whatsapp.com/send?text=${encodedTitle}%20${encodedUrl}`} target="_blank" rel="noopener noreferrer" aria-label="Share di WhatsApp" class="w-10 h-10 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-green-600 hover:bg-green-600 hover:text-white hover:border-green-600 transition-all shadow-sm">
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+								</a>
+								<!-- Twitter / X -->
+								<a href={`https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`} target="_blank" rel="noopener noreferrer" aria-label="Share di X" class="w-10 h-10 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-700 hover:bg-slate-900 hover:text-white hover:border-slate-900 transition-all shadow-sm">
+									<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+								</a>
+								<!-- Facebook -->
+								<a href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`} target="_blank" rel="noopener noreferrer" aria-label="Share di Facebook" class="w-10 h-10 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all shadow-sm">
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+								</a>
+								<!-- Copy Link -->
+								<button onclick={`navigator.clipboard.writeText('${shareUrl}'); alert('Tautan berhasil disalin!');`} aria-label="Salin Tautan" class="w-10 h-10 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-500 hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200 transition-all shadow-sm">
+									<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+								</button>
+							</div>
+						</div>
+					</div>
+
+					<!-- Main Article Content -->
+					<div class="blog-content w-full md:w-[calc(100%-4rem-3rem)] text-lg leading-relaxed md:pr-4">
+						<div class="mb-10 block md:hidden">
+							<h1 class="text-3xl font-extrabold text-slate-800 leading-tight mb-2">
+								{title}
+							</h1>
+							<div class="text-sm font-bold text-slate-500 mb-6">
+								<FormattedDate date={pubDate} />
+							</div>
+						</div>
+						<slot />
+					</div>
+				</div>
+				
+				<!-- Read More Banner CTA -->
+				<div class="m-6 md:m-12 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-8 md:p-10 text-center shadow-xl shadow-blue-200/50">
+					<h3 class="text-2xl md:text-3xl font-extrabold text-white mb-4">Mulai Kelola Usaha Lebih Mudah</h3>
+					<p class="text-blue-100 mb-8 max-w-xl mx-auto font-medium">Gunakan tool kasir, stok, dan rekap keuangan lengkap khusus UMKM secara gratis! Tidak perlu koneksi internet (100% Offline First).</p>
+					<a href="/apps/login" class="inline-flex items-center justify-center gap-2 bg-white text-slate-900 hover:bg-slate-50 font-bold py-3.5 px-8 rounded-full shadow-lg transition-transform hover:-translate-y-1">
+						Coba ModalHP Sekarang
+						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+					</a>
 				</div>
 			</article>
 		</main>
+		
 		<Footer />
 	</body>
 </html>
