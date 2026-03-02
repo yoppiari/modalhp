@@ -38,8 +38,8 @@
          </div>
        </div>
        <p class="text-sm text-slate-600 mb-4">
-         Unlimited auto backup agar tidak hilang semua yang disimpan di hp (untuk berjaga agar ketika memori penuh tetap aman).
-       </p>
+          Backup otomatis unlimited — data aman tanpa khawatir HP hilang, rusak, atau memori penuh. Ganti HP atau buka di perangkat lain? Tinggal login, semua data langsung tersedia.
+        </p>
        <button disabled class="w-full text-center bg-slate-100 text-slate-400 font-medium py-2 px-4 rounded-lg cursor-not-allowed">
          Segera Hadir
        </button>
