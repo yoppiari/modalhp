@@ -10,7 +10,13 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors({ origin: '*' }));
-app.use(express.json());
+app.use(express.json({
+    verify: (req, res, buf) => {
+        if (req.originalUrl.startsWith('/webhooks/scalev')) {
+            req.rawBody = buf.toString();
+        }
+    }
+}));
 
 // DEBUG LOGGING
 app.use((req, res, next) => {

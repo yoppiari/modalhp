@@ -15,9 +15,11 @@ model User {
   email              String      @unique
   subscriptionStatus String      @default("FREE") // FREE, PRO, CLOUD
   offlineOnly        Boolean     @default(true)
+  scalevOrderId      String?     @unique
   createdAt          DateTime    @default(now())
   updatedAt          DateTime    @updatedAt
   cloudData          CloudData[]
+  payments           Payment[]
 }
 
 model Otp {
@@ -55,4 +57,18 @@ model FeatureVote {
   createdAt        DateTime       @default(now())
 
   @@unique([featureRequestId, voterEmail])
+}
+
+model Payment {
+  id             String   @id @default(uuid())
+  scalevOrderId  String   @unique
+  scalevEvent    String
+  email          String
+  productName    String?
+  amount         String?
+  paymentStatus  String
+  rawPayload     String   // Full JSON for debugging
+  processedAt    DateTime @default(now())
+  userId         String?
+  user           User?    @relation(fields: [userId], references: [id])
 }
