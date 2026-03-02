@@ -33,6 +33,9 @@ export default defineConfig({
         // CSS is NOT excluded — it's small and needed for offline rendering
         globIgnores: ['**/assets/tool_*.js'],
         navigateFallback: 'index.html',
+        navigateFallbackDenylist: [
+          /^\/blog/ // Prevent SW from intercepting Astro blog pages
+        ],
         // Cache tool JS when visited/requested + Google Fonts for offline
         runtimeCaching: [
           {
