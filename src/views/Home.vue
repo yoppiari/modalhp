@@ -47,7 +47,7 @@
         </h1>
         
         <p class="text-xl md:text-2xl text-slate-500 max-w-3xl mx-auto leading-relaxed mb-12 font-medium">
-          Habiskan waktu rekap manual, langganan mahal bulanan, dan pakai banyak aplikasi terpisah untuk kasir, stok, dan marketing.
+          Tinggalkan cara lama yang bikin ribet dan mahal. ModalHP hadir memajukan usaha Anda dengan sistem komplit yang <strong class="text-slate-800">100% bisa dipakai tanpa internet</strong>. Sekali bayar, pakai sepuasnya!
         </p>
         
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -244,6 +244,95 @@
             Request Aplikasi Baru
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Keunggulan Section -->
+    <section class="py-16 bg-slate-50 border-t border-slate-100 relative">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest mb-4">
+            Keunggulan Utama
+          </div>
+          <h2 class="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight text-slate-900">
+            Mengapa Ratusan Pengusaha <br class="hidden md:block"/>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Beralih ke ModalHP?</span>
+          </h2>
+          <p class="text-lg text-slate-500 font-medium leading-relaxed">
+            Lebih dari sekadar kasir. Sistem kami dirancang secara fundamental untuk memberikan ketenangan pikiran, kecepatan, dan efisiensi biaya.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          
+          <!-- 100% Offline -->
+          <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <div class="w-14 h-14 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center mb-6">
+               <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <h3 class="text-xl font-bold text-slate-800 mb-3">100% Offline (PWA)</h3>
+            <p class="text-slate-500 leading-relaxed text-sm">
+              Lancar jaya meski tanpa kuota internet atau wilayah susah sinyal. Teknologi PWA & IndexedDB memastikan bisnis Anda tidak pernah terhenti.
+            </p>
+          </div>
+
+          <!-- Ringan & Cepat -->
+          <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <div class="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mb-6">
+               <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            </div>
+            <h3 class="text-xl font-bold text-slate-800 mb-3">Kinerja Super Cepat</h3>
+            <p class="text-slate-500 leading-relaxed text-sm">
+              Akses instan tanpa loading lama. Dioptimalkan secara khusus untuk berjalan mulus layaknya mentega di HP spesifikasi minim atau RAM kecil.
+            </p>
+          </div>
+
+          <!-- Privasi Terjamin -->
+          <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <div class="w-14 h-14 bg-rose-50 text-rose-600 rounded-2xl flex items-center justify-center mb-6">
+               <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+            </div>
+            <h3 class="text-xl font-bold text-slate-800 mb-3">Privasi 100% Terjamin</h3>
+            <p class="text-slate-500 leading-relaxed text-sm">
+              Kami tidak bisa mencuri data pelanggan Anda. Seluruh rekap transaksi mutlak disimpan LOKAL dan dienkripsi di peramban perangkat yang Anda gunakan.
+            </p>
+          </div>
+
+          <!-- Berbagi Super Cepat WA -->
+          <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <div class="w-14 h-14 bg-green-50 text-green-600 rounded-2xl flex items-center justify-center mb-6">
+               <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+            </div>
+            <h3 class="text-xl font-bold text-slate-800 mb-3">Integrasi Ekosistem WA</h3>
+            <p class="text-slate-500 leading-relaxed text-sm">
+              Dirancang sesuai kebiasaan orang Indonesia. Bagikan struk belanja, tagihan piutang, hingga pesanan semudah satu klik langsung ke WA pelanggan.
+            </p>
+          </div>
+
+          <!-- Install Instan (PWA) -->
+          <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <div class="w-14 h-14 bg-blue-100 text-blue-700 rounded-2xl flex items-center justify-center mb-6">
+               <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
+            </div>
+            <h3 class="text-xl font-bold text-slate-800 mb-3">Install Instan via Web</h3>
+            <p class="text-slate-500 leading-relaxed text-sm">
+              Hemat ruang penyimpanan HP Anda. Tak perlu ribet mencari di Play Store/App Store. Cukup klik tombol <i>Install</i> di aplikasi ini, dan ModalHP langsung terpasang di layar utama Anda!
+            </p>
+          </div>
+          
+          <!-- Bayar Sekali -->
+          <div class="bg-gradient-to-br from-blue-600 to-indigo-700 p-8 rounded-3xl border border-blue-500 shadow-xl hover:-translate-y-1 transition-all duration-300 text-white relative overflow-hidden">
+            <div class="absolute -right-4 -top-4 w-24 h-24 bg-white/10 rounded-full blur-xl"></div>
+            <div class="w-14 h-14 bg-white/20 text-white rounded-2xl flex items-center justify-center mb-6 backdrop-blur-sm border border-white/20">
+               <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Bebas Biaya Bulanan!</h3>
+            <p class="text-blue-100 leading-relaxed text-sm">
+              Selamat tinggal sewa aplikasi per bulan. Cukup <strong class="text-yellow-300">beli satu kali di awal</strong> untuk pemakaian seumur hidup. Jauh lebih hemat & melipatgandakan profit!
+            </p>
+          </div>
+
         </div>
       </div>
     </section>

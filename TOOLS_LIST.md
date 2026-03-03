@@ -2,6 +2,14 @@
 
 Dokumen ini berisi daftar status implementasi dari 15 tools yang ada di dalam aplikasi UMKM Kit hasil perombakan terbaru. Pengguna dapat merujuk ke dokumen ini untuk mengetahui fitur apa saja yang sudah tersedia. Semua tool ini dibagi ke dalam 4 kategori utama.
 
+## 🌟 Keunggulan Aplikasi ModalHP
+
+- **100% Offline Support (PWA)**: Aplikasi dapat digunakan dengan lancar saat tidak ada koneksi internet. Data tersimpan aman secara lokal menggunakan teknologi `IndexedDB` dan caching *Service Worker*.
+- **Cepat & Ringan (Lightweight)**: Akses web super instan tanpa lemot, dioptimalkan berjalan mulus pada HP spesifikasi rendah sekalipun.
+- **Privasi Terjamin (Privacy-First)**: Data transaksi, laporan keuangan, pelanggan, serta inventaris barang Anda mutlak disimpan LOKAL di perangkat, tidak disinkronisasi ke server lain, sehingga 100% rahasia dan aman.
+- **Bebas Biaya Bulanan (Pay Once)**: Tidak ada lagi uang sewa atau langganan bulanan yang memberatkan. Kumpulan alat berbisnis harian UMKM esensial ini cukup Anda bayar sekali di awal untuk penggunaan seumur hidup.
+- **Berbagi Super Cepat**: Terintegrasi ekosistem WA mudah dalam sekali klik untuk membagikan nota/struk, tagihan piutang, hingga otomatisasi link WA.
+
 ---
 
 ## 📂 1. Core Ecosystem (Manajemen Utama Warung)
