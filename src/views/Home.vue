@@ -356,7 +356,7 @@
             </p>
             
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-               <a href="/apps/login" class="bg-white text-slate-900 hover:bg-slate-50 font-black py-4 px-10 rounded-2xl shadow-[0_0_40px_rgba(255,255,255,0.3)] transition-all hover:scale-105 text-base md:text-lg flex items-center justify-center gap-2">
+               <a href="https://beli.modalhp.com/lifetime" class="bg-white text-slate-900 hover:bg-slate-50 font-black py-4 px-10 rounded-2xl shadow-[0_0_40px_rgba(255,255,255,0.3)] transition-all hover:scale-105 text-base md:text-lg flex items-center justify-center gap-2">
                  Daftar Sekarang
                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                </a>
