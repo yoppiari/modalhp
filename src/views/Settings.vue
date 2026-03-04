@@ -59,9 +59,14 @@
            <p class="text-xs text-indigo-600/80">Kelola penyimpanan perangkat.</p>
         </div>
       </div>
-      
+
       <!-- Offline Manager Component -->
       <OfflineManager />
+    </div>
+
+    <!-- Backup & Restore -->
+    <div class="mb-6">
+      <DataBackup />
     </div>
 
     <!-- Account -->
@@ -101,6 +106,7 @@
 <script setup>
 import { ref, watch, onMounted } from 'vue';
 import OfflineManager from '../components/OfflineManager.vue';
+import DataBackup from '../components/DataBackup.vue';
 import { useBusinessProfile } from '../composables/useBusinessProfile';
 
 // Account State
