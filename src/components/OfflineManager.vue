@@ -44,11 +44,12 @@
         </div>
         <button 
           @click="downloadTool(tool)" 
-          :disabled="tool.downloaded || tool.loading"
-          class="bg-indigo-50 text-indigo-700 px-3 py-1.5 rounded-lg text-xs font-bold disabled:opacity-50 disabled:bg-slate-50 disabled:text-slate-400 min-w-[80px] text-center"
+          :disabled="tool.loading"
+          class="px-3 py-1.5 rounded-lg text-xs font-bold disabled:opacity-50 min-w-[80px] text-center transition-colors"
+          :class="tool.downloaded ? 'bg-emerald-50 text-emerald-700 hover:bg-emerald-100' : 'bg-indigo-50 text-indigo-700 hover:bg-indigo-100'"
         >
-          <span v-if="tool.downloaded">✓ Ready</span>
-          <span v-else-if="tool.loading">...</span>
+          <span v-if="tool.loading">...</span>
+          <span v-else-if="tool.downloaded">↻ Update</span>
           <span v-else>Download</span>
         </button>
       </div>
@@ -161,15 +162,17 @@ const downloadTool = async (tool) => {
   if (!tool.loader || typeof tool.loader !== 'function') return;
   
   tool.loading = true;
+  tool.status = 'Downloading...';
   try {
+    // Force re-fetch the module to ensure SW caches the latest version
     await tool.loader();
     tool.downloaded = true;
-    tool.status = 'Offline Ready';
+    tool.status = 'Offline Ready ✓';
     markAsDownloaded(tool.id);
     await updateStorageInfo();
   } catch (e) {
     console.error(e);
-    tool.status = 'Error';
+    tool.status = 'Error — coba lagi';
   } finally {
     tool.loading = false;
   }
@@ -178,9 +181,7 @@ const downloadTool = async (tool) => {
 const downloadAllTools = async () => {
   isDownloadingAll.value = true;
   for (const tool of tools.value) {
-    if (!tool.downloaded) {
-      await downloadTool(tool);
-    }
+    await downloadTool(tool);
   }
   isDownloadingAll.value = false;
 };

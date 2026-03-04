@@ -39,6 +39,20 @@ export default defineConfig({
         // Cache tool JS when visited/requested + Google Fonts for offline
         runtimeCaching: [
           {
+            urlPattern: /\/api\/.*/,
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'api-cache',
+              expiration: {
+                maxEntries: 50,
+                maxAgeSeconds: 60 * 60 * 24 // 1 day
+              },
+              cacheableResponse: {
+                statuses: [0, 200]
+              }
+            }
+          },
+          {
             urlPattern: ({ url }) => url.pathname.includes('tool_'),
             handler: 'StaleWhileRevalidate',
             options: {

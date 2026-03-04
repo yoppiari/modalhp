@@ -248,6 +248,99 @@
       </div>
     </section>
 
+    <!-- Intip Tampilan Aplikasi (App Preview) -->
+    <section class="py-16 bg-gradient-to-b from-white to-slate-50 relative overflow-hidden">
+      <div class="absolute top-20 left-0 w-[500px] h-[500px] bg-blue-50 rounded-full blur-3xl -z-10 opacity-50"></div>
+      <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-indigo-50 rounded-full blur-3xl -z-10 opacity-40"></div>
+      
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-bold uppercase tracking-widest mb-4">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+            Intip Tampilannya
+          </div>
+          <h2 class="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight text-slate-900">
+            Simpel, Cepat, dan<br class="hidden md:block"/>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Langsung Bisa Dipakai.</span>
+          </h2>
+          <p class="text-lg text-slate-500 font-medium leading-relaxed">
+            Tidak perlu pelatihan khusus. Antarmuka ModalHP dirancang seintuisi mungkin — siapa pun bisa langsung menguasainya dalam hitungan menit, bahkan tanpa koneksi internet.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-start mt-12 w-full max-w-5xl mx-auto">
+          <!-- Screenshot 1: Dashboard -->
+          <div class="relative group mx-auto w-full max-w-[340px]">
+            <!-- Glowing aura behind the phone -->
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-[3rem] blur-xl opacity-30 group-hover:opacity-40 transition-opacity duration-700"></div>
+            
+            <!-- Phone Frame -->
+            <div class="relative bg-slate-900 rounded-[3rem] p-3 shadow-2xl transform -rotate-2 group-hover:rotate-0 transition-transform duration-700 hover:-translate-y-2 border border-slate-700/50">
+              <!-- Notch/Dynamic Island -->
+              <div class="absolute top-4 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-full z-20 flex items-center justify-center gap-2 shadow-inner">
+                <div class="w-1.5 h-1.5 rounded-full bg-slate-800/60 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]"></div>
+                <div class="w-1 h-1 rounded-full bg-blue-500/80 shadow-[0_0_4px_rgba(59,130,246,0.8)]"></div>
+              </div>
+              
+              <!-- Screen container -->
+              <div class="relative bg-white rounded-[2.25rem] overflow-hidden aspect-[9/19.5] border-[0.5px] border-slate-800">
+                <!-- Screen Glare Effect -->
+                <div class="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/0 to-white/10 z-10 pointer-events-none"></div>
+                <div class="absolute -inset-x-20 top-0 h-[40%] bg-gradient-to-b from-white/10 to-transparent transform -skew-y-12 z-10 pointer-events-none"></div>
+                
+                <!-- The actual image -->
+                <img src="/preview-dashboard.jpg" alt="Dashboard ModalHP" class="w-full h-full object-cover relative z-0" loading="lazy" />
+              </div>
+            </div>
+            
+            <!-- Description -->
+            <div class="mt-8 text-center px-4">
+              <h3 class="font-bold text-xl text-slate-800 mb-2">Semua Tools dalam Satu Layar</h3>
+              <p class="text-slate-500 text-sm leading-relaxed">Kasir, Stok, Laporan Omzet, Pencatat Hutang — semuanya tinggal satu ketukan jari Anda.</p>
+            </div>
+          </div>
+
+          <!-- Screenshot 2: Settings & Offline -->
+          <div class="relative group mx-auto w-full max-w-[340px] mt-8 md:mt-12">
+            <!-- Glowing aura behind the phone -->
+            <div class="absolute inset-0 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-[3rem] blur-xl opacity-30 group-hover:opacity-40 transition-opacity duration-700"></div>
+            
+            <!-- Phone Frame -->
+            <div class="relative bg-slate-900 rounded-[3rem] p-3 shadow-2xl transform rotate-2 group-hover:rotate-0 transition-transform duration-700 hover:-translate-y-2 border border-slate-700/50">
+              <!-- Notch/Dynamic Island -->
+              <div class="absolute top-4 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-full z-20 flex items-center justify-center gap-2 shadow-inner">
+                <div class="w-1.5 h-1.5 rounded-full bg-slate-800/60 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]"></div>
+                <div class="w-1 h-1 rounded-full bg-indigo-500/80 shadow-[0_0_4px_rgba(99,102,241,0.8)]"></div>
+              </div>
+              
+              <!-- Screen container -->
+              <div class="relative bg-white rounded-[2.25rem] overflow-hidden aspect-[9/19.5] border-[0.5px] border-slate-800">
+                <!-- Screen Glare Effect -->
+                <div class="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/0 to-white/10 z-10 pointer-events-none"></div>
+                <div class="absolute -inset-x-20 top-0 h-[40%] bg-gradient-to-b from-white/10 to-transparent transform -skew-y-12 z-10 pointer-events-none"></div>
+                
+                <!-- The actual image -->
+                <img src="/preview-settings.jpg" alt="Settings ModalHP" class="w-full h-full object-cover relative z-0" loading="lazy" />
+              </div>
+            </div>
+            
+            <!-- Description -->
+            <div class="mt-8 text-center px-4">
+              <h3 class="font-bold text-xl text-slate-800 mb-2">Personalisasi & Mode Offline</h3>
+              <p class="text-slate-500 text-sm leading-relaxed">Kelola profil usaha dan aktifkan Mode Offline — aplikasi 100% siap dipakai tanpa internet.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <a href="https://beli.modalhp.com/lifetime" class="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 px-8 rounded-full shadow-lg shadow-slate-200 transition-all hover:-translate-y-0.5 text-sm md:text-base">
+            Coba Sekarang — Bayar Sekali, Pakai Selamanya
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- Keunggulan Section -->
     <section class="py-16 bg-slate-50 border-t border-slate-100 relative">
       <div class="max-w-7xl mx-auto px-6">
@@ -337,31 +430,60 @@
       </div>
     </section>
 
-    <!-- Pricing / FOMO Offer Section -->
+    <!-- Pricing / FOMO Offer Section with 60% Discount -->
     <section class="py-16 bg-slate-900 relative">
       <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdib3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiM5Q0EzbkYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0djI2SDM0VjM2aC0yMnYyNGgtMnYtMjZoLTh2LTJoOHYtOGgtOHYtMmgyNHYtMjRWMmgydjIwaDIwdjJoLTIwdjgwaC0ydjhoLTJ6TTM2IDM2aC0ydjJOMzYiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-20"></div>
       
       <div class="max-w-4xl mx-auto px-6 relative z-10">
         <div class="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-1 md:p-1.5 shadow-2xl">
           <div class="bg-slate-900/90 backdrop-blur-xl rounded-[22px] md:rounded-[20px] p-6 md:p-12 text-center border border-white/10">
-            <span class="inline-block py-1 px-3 rounded-full bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 text-xs font-bold tracking-widest uppercase mb-4 shadow-inner">
-              Promo Terbatas
-            </span>
+            
+            <!-- Urgency Badge -->
+            <div class="flex flex-col items-center gap-3 mb-6">
+              <span class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-red-500/20 border border-red-400/40 text-red-400 text-xs font-bold tracking-widest uppercase animate-pulse shadow-inner">
+                <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-red-400"></span>
+                </span>
+                Kuota Sangat Terbatas
+              </span>
+              <span class="inline-block py-1 px-3 rounded-full bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 text-xs font-bold tracking-widest uppercase shadow-inner">
+                🔥 Diskon 60% — Hanya untuk Early Adopters
+              </span>
+            </div>
+
             <h2 class="text-2xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4 md:mb-6 tracking-tight">
-              Sangat Untung Memiliki Semua<br/>Aplikasi Ini... <br/>
-              <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500 drop-shadow-sm leading-normal">Dengan Harga Seumur Hidup!</span>
+              15 Aplikasi Lengkap Seumur Hidup<br/>
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500 drop-shadow-sm leading-normal">Dengan Harga Secangkir Kopi.</span>
             </h2>
+            
             <p class="text-slate-300 text-sm md:text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
-              Katakan selamat tinggal pada langganan bulanan yang mengeringkan keuntungan Anda. Bayar sekali hari ini, pakai bebas selamanya tanpa batas kuota transaksi.
+              Katakan selamat tinggal pada langganan bulanan yang mengeringkan keuntungan Anda. Bayar <strong class="text-white">sekali hari ini</strong>, pakai bebas <strong class="text-white">selamanya</strong> — tanpa batas kuota transaksi, tanpa biaya tersembunyi.
             </p>
+
+            <!-- Price Comparison -->
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 mb-8 border border-white/10 max-w-md mx-auto">
+              <div class="flex items-center justify-center gap-3 mb-3">
+                <span class="text-slate-400 line-through text-lg md:text-2xl font-bold">Rp 499.000</span>
+                <span class="bg-red-500 text-white text-xs font-black px-2.5 py-1 rounded-full">-60%</span>
+              </div>
+              <div class="text-4xl md:text-5xl font-black text-white mb-1">
+                Rp 199.000
+              </div>
+              <p class="text-yellow-400 text-sm font-bold">Sekali bayar. Seumur Hidup. Selesai.</p>
+            </div>
             
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-               <a href="https://beli.modalhp.com/lifetime" class="bg-white text-slate-900 hover:bg-slate-50 font-black py-4 px-10 rounded-2xl shadow-[0_0_40px_rgba(255,255,255,0.3)] transition-all hover:scale-105 text-base md:text-lg flex items-center justify-center gap-2">
-                 Daftar Sekarang
+               <a href="https://beli.modalhp.com/lifetime" class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 hover:from-yellow-300 hover:to-yellow-400 font-black py-4 px-10 rounded-2xl shadow-[0_0_40px_rgba(250,204,21,0.4)] transition-all hover:scale-105 text-base md:text-lg flex items-center justify-center gap-2">
+                 🚀 Ambil Diskon 60% Sekarang
                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                </a>
             </div>
-            <p class="mt-6 text-xs text-slate-400">Garansi uang kembali 14 hari penuh. Bebas risiko.</p>
+            
+            <div class="mt-6 space-y-2">
+              <p class="text-xs text-slate-400">⚡ Harga naik kapan saja tanpa pemberitahuan sebelumnya.</p>
+              <p class="text-xs text-slate-400">🛡️ Garansi uang kembali 14 hari penuh. 100% bebas risiko.</p>
+            </div>
           </div>
         </div>
       </div>
