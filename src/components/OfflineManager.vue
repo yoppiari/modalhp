@@ -22,7 +22,7 @@
         <span class="text-[11px] text-slate-500">{{ storageInfo.usedText }} / {{ storageInfo.totalText }}</span>
       </div>
       <div class="w-full bg-slate-200 rounded-full h-2 overflow-hidden">
-        <div 
+        <div
           class="h-2 rounded-full transition-all duration-500"
           :class="storageInfo.percent > 80 ? 'bg-red-500' : storageInfo.percent > 50 ? 'bg-amber-500' : 'bg-emerald-500'"
           :style="{ width: storageInfo.percent + '%' }"
@@ -31,6 +31,26 @@
       <p class="text-[10px] mt-1" :class="storageInfo.percent > 80 ? 'text-red-500' : 'text-slate-400'">
         {{ storageInfo.percent > 80 ? '⚠ Penyimpanan hampir penuh' : 'Sisa ' + storageInfo.freeText + ' tersedia' }}
       </p>
+    </div>
+
+    <!-- Clear Cache Button -->
+    <div class="mb-4 bg-amber-50 border border-amber-200 rounded-lg p-3">
+      <div class="flex items-start gap-2 mb-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-600 mt-0.5"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="12" y2="12"/></svg>
+        <div class="flex-1">
+          <h4 class="font-bold text-amber-900 text-sm">Update Tersedia?</h4>
+          <p class="text-[11px] text-amber-700 leading-tight">Jika ada versi terbaru, bersihkan cache untuk mendapatkannya.</p>
+        </div>
+      </div>
+      <button
+        @click="clearCacheAndReload"
+        :disabled="isClearing"
+        class="w-full bg-amber-500 hover:bg-amber-600 text-white text-xs font-bold py-2 px-3 rounded-lg transition-all disabled:opacity-50 flex items-center justify-center gap-2"
+      >
+        <svg v-if="!isClearing" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 12"/><path d="M3 3v9h9"/></svg>
+        <span v-if="isClearing">Membersihkan...</span>
+        <span v-else>🗑️ Bersihkan Cache & Reload</span>
+      </button>
     </div>
     
     <div class="space-y-3">
@@ -184,5 +204,41 @@ const downloadAllTools = async () => {
     await downloadTool(tool);
   }
   isDownloadingAll.value = false;
+};
+
+const isClearing = ref(false);
+
+// Clear all caches and reload - user can manually get latest version
+const clearCacheAndReload = async () => {
+  if (!confirm('Bersihkan semua cache dan reload halaman? Anda akan mendapat versi terbaru jika ada update.')) return;
+
+  isClearing.value = true;
+
+  try {
+    // Unregister all service workers
+    if ('serviceWorker' in navigator) {
+      const registrations = await navigator.serviceWorker.getRegistrations();
+      await Promise.all(registrations.map(r => r.unregister()));
+    }
+
+    // Clear all caches
+    if ('caches' in window) {
+      const cacheNames = await caches.keys();
+      await Promise.all(cacheNames.map(name => caches.delete(name)));
+    }
+
+    // Clear localStorage cache flags (but keep app data)
+    const keysToClear = ['pwa_cache_cleared_v2', 'sw_retries', 'app_version'];
+    keysToClear.forEach(key => localStorage.removeItem(key));
+
+    // Force reload with cache bypass
+    await caches.keys().then(async () => {
+      location.href = location.pathname + '?t=' + Date.now();
+    });
+  } catch (e) {
+    console.error('Clear cache error:', e);
+    // Fallback: hard reload
+    location.reload(true);
+  }
 };
 </script>

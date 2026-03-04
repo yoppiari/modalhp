@@ -10,7 +10,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <title>ModalHP - Kelola Usaha Cuma Modal HP</title>
+  <meta http-equiv="Cache-Control" content="max-age=31536000">
   <script defer src="/sw-recovery.js"></script>
+  <script>
+    // Version check for cache management - stores version and allows manual clear
+    (function(){
+      var CURRENT_HASH = '0iGm3meg';
+      var storedVersion = localStorage.getItem('app_version');
+
+      // Store current version for reference
+      localStorage.setItem('app_version', CURRENT_HASH);
+      localStorage.setItem('app_version_time', Date.now().toString());
+
+      // DO NOT force reload - let user decide when to clear cache
+      // Version info available for UI to show update availability
+    })();
+  </script>
   <!-- Google tag (gtag.js) — only load when online -->
   <script>
     if (navigator.onLine) {

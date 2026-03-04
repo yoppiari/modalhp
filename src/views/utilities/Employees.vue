@@ -1,3 +1,4 @@
+<!-- v2.1 - Karyawan & Kasbon Management -->
 <template>
   <div class="bg-slate-50 min-h-screen pb-24">
     <!-- Header -->

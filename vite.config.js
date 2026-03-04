@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [
     vue(),
     VitePWA({
-      registerType: 'autoUpdate',
+      registerType: 'prompt',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
       manifest: {
         name: 'ModalHP',
@@ -29,6 +29,8 @@ export default defineConfig({
         ]
       },
       workbox: {
+        // Cache version for invalidation - increment to force cache clear on new deploy
+        cacheId: 'modalhp-v2.2',
         // Exclude tool JS chunks from initial precache (downloaded on-demand)
         // CSS is NOT excluded — it's small and needed for offline rendering
         globIgnores: ['**/assets/tool_*.js'],
