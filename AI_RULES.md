@@ -26,3 +26,11 @@
 5.  **SSH CREDENTIALS**: Never hardcode SSH credentials in workflow files or commit them
     - Use GitHub Secrets: `VPS_HOST`, `VPS_USER`, `VPS_SSH_KEY`, `VPS_SSH_PORT`
     - For manual deploy: Use SSH keys authentication (no password in scripts)
+6.  **EKSTRA PAGE CONSISTENCY**: Semua fitur di halaman Ekstra harus seragam behavior-nya
+    - **Format**: Card link dengan router-link ke halaman detail terpisah
+    - **Struktur Card**: Icon (bg colored circle) + Judul + Deskripsi singkat + Chevron right
+    - **Hover Effect**: `hover:bg-slate-50` + `group-hover:bg-{color}-100` pada icon bg
+    - **Pattern**: Jangan taruh konten panjang/instruksi di card Ekstra, buat halaman detail terpisah
+    - **Contoh**: `/apps/ekstra/cs`, `/apps/ekstra/request-fitur`, `/apps/ekstra/ai-poster-maker`
+    - **File Structure**: `src/views/ekstra/{FeatureName}.vue`
+    - **Router**: Tambah route di `src/router/index.js` dengan pattern yang sama

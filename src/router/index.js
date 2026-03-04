@@ -31,6 +31,7 @@ const routes = [
     { path: '/apps/ekstra', name: 'Ekstra', component: () => import('../views/Ekstra.vue'), meta: { requiresAuth: true } },
     { path: '/apps/ekstra/cs', name: 'CustomerService', component: () => import('../views/ekstra/CustomerService.vue'), meta: { requiresAuth: true } },
     { path: '/apps/ekstra/request-fitur', name: 'FeatureRequest', component: () => import('../views/ekstra/FeatureRequest.vue'), meta: { requiresAuth: true } },
+    { path: '/apps/ekstra/ai-poster-maker', name: 'AIPosterMaker', component: () => import('../views/ekstra/AIPosterMaker.vue'), meta: { requiresAuth: true } },
 
     // Finance
     { path: '/apps/finance/payroll', name: 'Payroll', component: loadTool('finance', 'Payroll'), meta: { requiresAuth: true } },
