@@ -135,7 +135,7 @@
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue';
+import { ref, computed, watch, onMounted } from 'vue';
 import { Line } from 'vue-chartjs';
 import {
   Chart as ChartJS,
@@ -150,7 +150,6 @@ import {
 } from 'chart.js';
 import { db } from '../../db';
 import { liveQuery } from 'dexie';
-import { useObservable } from '@vueuse/rxjs';
 import { useBusinessProfile } from '../../composables/useBusinessProfile';
 import { jsPDF } from 'jspdf';
 import 'jspdf-autotable';
@@ -169,6 +168,38 @@ ChartJS.register(
 const selectedDate = ref(new Date());
 const { businessProfile, hasProfile } = useBusinessProfile();
 
+// Reactive data
+const transactions = ref([]);
+const transactionItems = ref([]);
+
+// Fetch transactions for selected date
+const fetchTransactions = async () => {
+  const start = startOfDay.value;
+  const end = endOfDay.value;
+
+  transactions.value = await db.transactions
+    .where('date')
+    .between(start, end, true, true)
+    .reverse()
+    .toArray();
+
+  // Fetch transaction items for these transactions
+  const transactionIds = transactions.value.map(t => t.id);
+  if (transactionIds.length > 0) {
+    transactionItems.value = await db.transaction_items
+      .where('transaction_id')
+      .anyOf(...transactionIds)
+      .toArray();
+  } else {
+    transactionItems.value = [];
+  }
+};
+
+// Watch date changes and refetch data
+watch(selectedDate, () => {
+  fetchTransactions();
+}, { immediate: true });
+
 const startOfDay = computed(() => {
    const d = new Date(selectedDate.value);
    d.setHours(0,0,0,0);
@@ -180,25 +211,6 @@ const endOfDay = computed(() => {
    d.setHours(23,59,59,999);
    return d.getTime();
 });
-
-const transactions = useObservable(
-  liveQuery(() =>
-     db.transactions
-       .where('date')
-       .between(startOfDay.value, endOfDay.value, true, true)
-       .reverse()
-       .toArray()
-  )
-) || ref([]);
-
-const transactionItems = useObservable(
-  liveQuery(() =>
-     db.transaction_items
-       .where('transaction_id')
-       .anyOf(transactions.value?.map(t => t.id) || [])
-       .toArray()
-  )
-) || ref([]);
 
 const summary = computed(() => {
    const list = transactions.value || [];
