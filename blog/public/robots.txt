@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://modalhp.com/blog/sitemap-index.xml
