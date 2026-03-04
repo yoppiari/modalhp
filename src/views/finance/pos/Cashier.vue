@@ -8,7 +8,7 @@
            {{ cartTotalItems }} items
         </div>
       </div>
-      
+
       <!-- Search Bar -->
       <div class="bg-white/10 backdrop-blur p-1 rounded-xl flex items-center border border-white/20">
          <span class="pl-3 text-indigo-200">🔍</span>
@@ -18,12 +18,12 @@
 
     <!-- Product Grid -->
     <div class="px-4 mt-4 grid grid-cols-2 gap-3 pb-32">
-       <div v-for="product in filteredProducts" :key="product.id" 
+       <div v-for="product in filteredProducts" :key="product.id"
             @click="addToCart(product)"
             class="bg-white p-3 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-between h-32 active:scale-95 transition-transform relative overflow-hidden">
-          
+
           <div v-if="product.stock <= 0" class="absolute inset-0 bg-white/60 flex items-center justify-center font-bold text-red-500 text-sm z-10 backdrop-blur-[1px]">HABIS</div>
-          
+
           <div>
             <h3 class="font-medium text-slate-800 text-sm line-clamp-2 leading-snug">{{ product.name }}</h3>
             <p class="text-[10px] text-slate-400 mt-1">{{ product.category }}</p>
@@ -46,7 +46,7 @@
              <span class="text-indigo-600 text-xl font-bold" :class="showCartDetail ? 'rotate-180 block' : ''">^</span>
           </div>
        </div>
-       
+
        <!-- Cart Detail Expandable -->
        <div v-if="showCartDetail" class="max-h-60 overflow-y-auto mb-4 space-y-2 border-t border-slate-100 pt-2 text-sm">
           <div v-for="(item, idx) in cart" :key="idx" class="flex justify-between items-center py-1">
@@ -66,6 +66,60 @@
        </button>
     </div>
   </div>
+
+  <!-- Checkout Success Modal with Print Options -->
+  <div v-if="showCheckoutSuccess" class="fixed inset-0 bg-black/50 z-[101] flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl p-6 max-w-sm w-full animate-in fade-in zoom-in duration-200">
+      <div class="text-center mb-6">
+        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-slate-800 mb-1">Transaksi Berhasil!</h3>
+        <p class="text-sm text-slate-500">{{ lastTransaction?.invoice_number }}</p>
+      </div>
+
+      <!-- Bluetooth Printer Status -->
+      <div class="bg-slate-50 p-3 rounded-xl mb-4">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-bold text-slate-600">
+            {{ isSupported ? (isConnected ? '✅ Printer Terhubung' : '📶 Bluetooth Printer') : '❌ Bluetooth Tidak Didukung' }}
+          </span>
+        </div>
+        <p v-if="!isSupported" class="text-xs text-slate-400">Gunakan Chrome/Edge untuk cetak Bluetooth</p>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="space-y-3">
+        <button
+          @click="printBluetoothReceipt"
+          class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-bold transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+          :disabled="!isConnected || isPrinting"
+        >
+          {{ isPrinting ? '⏳ Mencetak...' : '📶 Cetak via Bluetooth' }}
+        </button>
+        <button
+          @click="printRegularReceipt"
+          class="w-full bg-slate-800 hover:bg-slate-700 text-white py-3 rounded-xl font-bold transition-all flex items-center justify-center gap-2"
+        >
+          🖨️ Cetak via Print Dialog
+        </button>
+        <button
+          @click="shareWhatsappReceipt"
+          class="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl font-bold transition-all flex items-center justify-center gap-2"
+        >
+          📱 Kirim via WhatsApp
+        </button>
+        <button
+          @click="closeModal"
+          class="w-full bg-slate-100 hover:bg-slate-200 text-slate-600 py-3 rounded-xl font-bold transition-all"
+        >
+          Tutup
+        </button>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -73,10 +127,32 @@ import { ref, computed, onMounted } from 'vue';
 import { db } from '../../../db';
 import { liveQuery } from 'dexie';
 import { useObservable } from '@vueuse/rxjs';
+import { useBluetoothPrinter } from '../../../composables/useBluetoothPrinter';
+import { useBusinessProfile } from '../../../composables/useBusinessProfile';
+import { WHATSAPP_API_URL } from '@/utils/constants';
 
 const searchQuery = ref('');
 const showCartDetail = ref(false);
 const cart = ref([]);
+
+// Bluetooth Printer
+const {
+  isConnected,
+  isConnecting,
+  isPrinting,
+  error,
+  isSupported,
+  connect,
+  printTransactionReceipt
+} = useBluetoothPrinter();
+
+// Business Profile
+const { businessProfile, hasProfile } = useBusinessProfile();
+
+// Checkout Success State
+const showCheckoutSuccess = ref(false);
+const lastTransaction = ref(null);
+const lastTransactionItems = ref([]);
 
 // Using useObservable for reactive Dexie query
 const products = useObservable(
@@ -98,9 +174,7 @@ const cartTotalItems = computed(() => cart.value.reduce((sum, item) => sum + ite
 
 const addToCart = (product) => {
    if (product.stock <= 0) return alert('Stok Habis!');
-   
-   // Check stock vs cart qty logic could be added here
-   
+
    const existing = cart.value.find(i => i.product_id === product.id);
    if (existing) {
       existing.qty++;
@@ -110,7 +184,7 @@ const addToCart = (product) => {
          product_id: product.id,
          name: product.name,
          price_at_sale: product.price,
-         cost_at_sale: product.cost, // Important for profit calculation
+         cost_at_sale: product.cost,
          qty: 1,
          subtotal: product.price
       });
@@ -139,18 +213,16 @@ const checkout = async () => {
       date: Date.now(),
       invoice_number: `INV-${Date.now()}`,
       type: 'SALE',
-      payment_method: 'CASH', // Hardcoded for now, can add selector
-      total_amount: cartTotal.value, 
+      payment_method: 'CASH',
+      total_amount: cartTotal.value,
       final_amount: cartTotal.value,
       discount: 0,
    };
 
    try {
       await db.transaction('rw', db.transactions, db.transaction_items, db.products, async () => {
-         // 1. Save Transaction
          const transId = await db.transactions.add(transaction);
 
-         // 2. Save Items & Update Stock
          for (const item of cart.value) {
             await db.transaction_items.add({
                transaction_id: transId,
@@ -162,21 +234,71 @@ const checkout = async () => {
                subtotal: item.subtotal
             });
 
-            // Decrement Stock
             const product = await db.products.get(item.product_id);
             if (product) {
                await db.products.update(item.product_id, { stock: product.stock - item.qty });
             }
          }
       });
-      
-      alert('Transaksi Berhasil!');
+
+      // Store transaction info for printing
+      lastTransaction.value = transaction;
+      lastTransactionItems.value = cart.value.map(item => ({
+        product_name_at_sale: item.name,
+        price_at_sale: item.price_at_sale,
+        qty: item.qty,
+        subtotal: item.subtotal
+      }));
+
+      showCheckoutSuccess.value = true;
       cart.value = [];
       showCartDetail.value = false;
    } catch (e) {
       console.error(e);
       alert('Gagal memproses transaksi');
    }
+};
+
+// Print Functions
+const printBluetoothReceipt = async () => {
+  if (!isConnected.value || !lastTransaction.value) return;
+
+  try {
+    await printTransactionReceipt(lastTransaction.value, lastTransactionItems.value, businessProfile.value);
+  } catch (err) {
+    alert('Gagal mencetak: ' + err.message);
+  }
+};
+
+const printRegularReceipt = () => {
+  // For now, just close modal and redirect to invoice generator
+  // In a full implementation, you'd open a print window here
+  closeModal();
+  // Could navigate to InvoiceGenerator with the transaction ID
+};
+
+const shareWhatsappReceipt = () => {
+  const shopName = hasProfile.value ? businessProfile.value.businessName : 'WARUNG BERKAH';
+  let text = `*${shopName}*\n`;
+  text += `--------------------------------\n`;
+  text += `No: ${lastTransaction.value.invoice_number}\n`;
+  text += `Tgl: ${new Date(lastTransaction.value.date).toLocaleString('id-ID')}\n\n`;
+
+  lastTransactionItems.value.forEach(item => {
+    text += `${item.product_name_at_sale} x${item.qty} = Rp ${formatNumber(item.subtotal)}\n`;
+  });
+
+  text += `--------------------------------\n`;
+  text += `*TOTAL: Rp ${formatNumber(lastTransaction.value.total_amount)}*\n`;
+  text += `Terima Kasih!`;
+
+  const url = `${WHATSAPP_API_URL}?text=${encodeURIComponent(text)}`;
+  window.open(url, '_blank');
+};
+
+const closeModal = () => {
+  showCheckoutSuccess.value = false;
+  lastTransaction.value = null;
 };
 
 const formatNumber = (n) => new Intl.NumberFormat('id-ID').format(n);

@@ -109,7 +109,16 @@
              <component :is="LayersIcon" size="18" class="text-orange-500 bg-orange-50 p-0.5 rounded" />
           </div>
           <div class="grid grid-cols-2 gap-4">
-             <!-- Slip Gaji -->
+             <!-- Karyawan & Kasbon -->
+            <router-link v-show="matchSearch('karyawan kasbon manage')" to="/apps/utilities/employees" class="bg-white p-4 rounded-3xl shadow-[0_4px_20px_-10px_rgba(0,0,0,0.08)] border border-slate-50 hover:border-emerald-100 hover:shadow-lg transition-all active:scale-95 relative group">
+               <div class="bg-emerald-50 w-12 h-12 rounded-2xl flex items-center justify-center text-emerald-600 mb-3 group-hover:scale-110 transition-transform duration-300">
+                <component :is="UsersIcon" size="24" stroke-width="2" />
+              </div>
+              <h3 class="font-bold text-slate-700 text-sm mb-0.5">Karyawan</h3>
+              <p class="text-[10px] text-slate-400 font-medium">Kelola Kasbon</p>
+            </router-link>
+
+            <!-- Slip Gaji -->
             <router-link v-show="matchSearch('slip gaji hitung gaji payroll')" to="/apps/finance/payroll" class="bg-white p-4 rounded-3xl shadow-[0_4px_20px_-10px_rgba(0,0,0,0.08)] border border-slate-50 hover:border-emerald-100 hover:shadow-lg transition-all active:scale-95 relative group">
                <div class="bg-emerald-50 w-12 h-12 rounded-2xl flex items-center justify-center text-emerald-600 mb-3 group-hover:scale-110 transition-transform duration-300">
                 <component :is="UsersIcon" size="24" stroke-width="2" />
@@ -118,7 +127,7 @@
               <p class="text-[10px] text-slate-400 font-medium">Hitung Gaji</p>
             </router-link>
 
-            <!-- Cek HPP -->
+             <!-- Cek HPP -->
             <router-link v-show="matchSearch('cek hpp modal kuliner kalkulator')" to="/apps/operations/hpp-calculator" class="bg-white p-4 rounded-3xl shadow-[0_4px_20px_-10px_rgba(0,0,0,0.08)] border border-slate-50 hover:border-orange-100 hover:shadow-lg transition-all active:scale-95 relative group">
                <div class="bg-orange-50 w-12 h-12 rounded-2xl flex items-center justify-center text-orange-600 mb-3 group-hover:scale-110 transition-transform duration-300">
                 <component :is="CalculatorIcon" size="24" stroke-width="2" />
@@ -237,7 +246,7 @@ const matchSearch = (keywords) => {
 };
 
 const showSection1 = computed(() => matchSearch('kasir warung mulai jualan') || matchSearch('produk kelola stok') || matchSearch('laporan cek omzet') || matchSearch('hutang catat kasbon') || matchSearch('kuitansi cetak struk invoice') || matchSearch('kartu stok mutasi barang'));
-const showSection2 = computed(() => matchSearch('slip gaji hitung gaji payroll') || matchSearch('cek hpp modal kuliner kalkulator') || matchSearch('wa link auto chat whatsapp') || matchSearch('kredit simulasi cicilan pinjaman'));
+const showSection2 = computed(() => matchSearch('slip gaji hitung gaji payroll') || matchSearch('cek hpp modal kuliner kalkulator') || matchSearch('wa link auto chat whatsapp') || matchSearch('kredit simulasi cicilan pinjaman') || matchSearch('karyawan kasbon manage'));
 const showSection3 = computed(() => matchSearch('diskon hitung promo persentase') || matchSearch('harga ojol gofood grabfood shopeefood anti rugi potongan') || matchSearch('qr code serbaguna buat link teks menu wifi'));
 const showSection4 = computed(() => matchSearch('split bill patungan makan bayar') || matchSearch('doorprize acak pemenang undian random'));
 

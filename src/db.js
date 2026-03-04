@@ -32,6 +32,14 @@ db.version(2).stores({
     inventory_log: '++id, product_id, date, type, qty, note'
 });
 
+db.version(3).stores({
+    // Employees (Karyawan)
+    employees: '++id, &nik, name, position, phone, is_active',
+
+    // Kasbon / Debt Management
+    kasbon: '++id, employee_id, date, amount, remaining, status, note'
+});
+
 // Helper to check if DB is open
 export const isDbReady = async () => {
     try {

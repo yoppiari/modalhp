@@ -54,6 +54,7 @@ const routes = [
     { path: '/apps/utilities/bill-splitter', name: 'BillSplitter', component: () => import('../views/utilities/BillSplitter.vue'), meta: { requiresAuth: true } },
     { path: '/apps/utilities/credit-simulator', name: 'CreditSimulator', component: () => import('../views/utilities/CreditSimulator.vue'), meta: { requiresAuth: true } },
     { path: '/apps/utilities/random-picker', name: 'RandomPicker', component: () => import('../views/utilities/RandomPicker.vue'), meta: { requiresAuth: true } },
+    { path: '/apps/utilities/employees', name: 'Employees', component: () => import('../views/utilities/Employees.vue'), meta: { requiresAuth: true } },
 ]
 
 const router = createRouter({
