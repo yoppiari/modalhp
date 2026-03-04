@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ModalHP - Sistem Usaha Terlengkap Bebas Biaya Bulanan</title>
+    <!-- Tailwind CSS (CDN for standalone HTML) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Meta Pixel Code (Placeholder - should be replaced with actual pixel by User) -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        // fbq('init', 'YOUR_PIXEL_ID'); 
+        // fbq('track', 'PageView');
+    </script>
+</head>
+
+<body
+    class="bg-slate-50 text-slate-900 font-sans selection:bg-blue-100 selection:text-blue-900 overflow-x-hidden antialiased">
+
+    <!-- 1. HERO SECTION -->
+    <section class="relative pt-16 pb-16 lg:pt-24 lg:pb-20 overflow-hidden bg-white border-b border-slate-100">
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-50 rounded-full blur-3xl -z-10 opacity-70">
+        </div>
+        <div class="absolute top-20 -right-20 w-[400px] h-[400px] bg-indigo-50 rounded-full blur-3xl -z-10 opacity-50">
+        </div>
+
+        <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+            <div
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 text-white text-xs font-bold uppercase tracking-widest shadow-lg mb-8">
+                Khusus Pemilik Warung, Kedai Kopi, & Usaha Kecil...
+            </div>
+
+            <h1
+                class="text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-[1.15] text-slate-900">
+                Ubah HP Android Biasamu Jadi Mesin Kasir & Laporan Keuangan.<br />
+                <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500 line-through decoration-slate-300 decoration-4">Tanpa
+                    Biaya Bulanan!</span>
+            </h1>
+
+            <p class="text-lg md:text-2xl text-slate-500 max-w-3xl mx-auto leading-relaxed mb-10 font-medium">
+                Tinggalkan catatan kertas yang sering hilang dan aplikasi kasir mahal yang menggerus laba Anda tiap
+                bulan. ModalHP memberikan <strong class="text-blue-600">15 Alat Usaha Komplit</strong> hanya dengan
+                bayar SATU KALI seumur hidup.
+            </p>
+
+            <a href="#offer"
+                class="inline-flex bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-black py-5 px-10 rounded-2xl shadow-xl shadow-blue-200 transition-all hover:-translate-y-1 text-lg mb-16 items-center gap-3">
+                BELI MODALHP SEKARANG (Diskon 60%)
+                <svg class="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                        d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </a>
+
+            <!-- Mockups from Home.vue -->
+            <div class="grid md:grid-cols-2 gap-8 lg:gap-16 items-start w-full max-w-4xl mx-auto relative">
+                <!-- Background aura for mockups -->
+                <div class="absolute inset-0 bg-blue-100 rounded-[3rem] blur-3xl opacity-30 -z-10"></div>
+
+                <!-- Screenshot 1: Dashboard -->
+                <div class="relative mx-auto w-full max-w-[280px] md:max-w-[320px]">
+                    <div
+                        class="relative bg-slate-900 rounded-[3rem] p-2.5 shadow-2xl transform -rotate-3 border border-slate-700/50">
+                        <div
+                            class="absolute top-3 left-1/2 -translate-x-1/2 w-20 h-5 bg-black rounded-full z-20 flex items-center justify-center gap-2">
+                        </div>
+                        <div
+                            class="relative bg-white rounded-[2.25rem] overflow-hidden aspect-[9/19.5] border-[0.5px] border-slate-800">
+                            <img src="/preview-dashboard.jpg" alt="Kasir Cepat ModalHP"
+                                class="w-full h-full object-cover relative z-0" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Screenshot 2: Settings & Offline -->
+                <div class="relative mx-auto w-full max-w-[280px] md:max-w-[320px] mt-8 md:mt-12">
+                    <div
+                        class="relative bg-slate-900 rounded-[3rem] p-2.5 shadow-2xl transform rotate-3 border border-slate-700/50">
+                        <div
+                            class="absolute top-3 left-1/2 -translate-x-1/2 w-20 h-5 bg-black rounded-full z-20 flex items-center justify-center gap-2">
+                        </div>
+                        <div
+                            class="relative bg-white rounded-[2.25rem] overflow-hidden aspect-[9/19.5] border-[0.5px] border-slate-800">
+                            <img src="/preview-settings.jpg" alt="100% Offline ModalHP"
+                                class="w-full h-full object-cover relative z-0" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. THE PROBLEM (Agitation) -->
+    <section class="py-20 bg-slate-50 border-b border-slate-100 relative">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12 text-slate-800">
+                Apakah Bisnis Anda Sering Mengalami <span class="text-red-500">3 Masalah Ini?</span>
+            </h2>
+
+            <div class="space-y-6">
+                <!-- Problem 1 -->
+                <div class="flex gap-5 p-6 bg-white rounded-3xl shadow-sm border border-red-100">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-red-50 flex items-center justify-center text-red-500 flex-shrink-0">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-xl mb-2 text-slate-800">Uang Bocor Gak Jelas</h3>
+                        <p class="text-slate-600 leading-relaxed md:text-lg">Warung ramai pembeli tiap hari, laci penuh,
+                            tapi waktu mau kulakan barang, modalnya malah minus karena uang rumah dan uang warung
+                            tercampur tanpa pencatatan yang benar.</p>
+                    </div>
+                </div>
+                <!-- Problem 2 -->
+                <div class="flex gap-5 p-6 bg-white rounded-3xl shadow-sm border border-red-100">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-red-50 flex items-center justify-center text-red-500 flex-shrink-0">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-xl mb-2 text-slate-800">Diperas Biaya Langganan Bulanan</h3>
+                        <p class="text-slate-600 leading-relaxed md:text-lg">Sudah capek cari untung receh, eh malah
+                            ditagih Rp 150.000 setiap bulan cuma buat pakai aplikasi kasir & nge-print struk ke
+                            pelanggan.</p>
+                    </div>
+                </div>
+                <!-- Problem 3 -->
+                <div class="flex gap-5 p-6 bg-white rounded-3xl shadow-sm border border-red-100">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-red-50 flex items-center justify-center text-red-500 flex-shrink-0">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-xl mb-2 text-slate-800">Pusing Hitung HPP & Harga Promo</h3>
+                        <p class="text-slate-600 leading-relaxed md:text-lg">Nggak tahu cara hitung ongkos bahan baku
+                            (HPP). Jualan GoFood/GrabFood harganya disamakan dengan offline, akhirnya boncos dipotong
+                            komisi 20% diaplikasi!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3 & 4. THE SOLUTION & FEATURES -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-5xl font-extrabold mb-6 text-slate-900 tracking-tight">
+                    Saatnya Beralih ke Sistem Cerdas<br /> <span class="text-blue-600">Tanpa Bikin Pusing!</span>
+                </h2>
+                <p class="text-xl text-slate-500 font-medium">Kenalkan <strong>ModalHP</strong>. Bukan sekadar aplikasi
+                    kasir biasa, ini adalah asisten lengkap yang diciptakan khusus untuk UMKM Indonesia.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Fitur 1 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">POS Kasir & Cetak Struk Bluetooth</h3>
+                    <p class="text-slate-600">Catat penjualan super cepat. Cetak struk belanja ke printer Bluetooth merk
+                        apapun tanpa harus bayar biaya premium.</p>
+                </div>
+                <!-- Fitur 2 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100">
+                    <div
+                        class="w-12 h-12 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Kalkulator HPP Makanan</h3>
+                    <p class="text-slate-600">Jangan nebak harga. Masukkan harga gandum/daging, dan biarkan sistem
+                        menghitung harga jual ideal yang pasti untung.</p>
+                </div>
+                <!-- Fitur 3 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100">
+                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Penghitung Harga Ojek Online</h3>
+                    <p class="text-slate-600">Jualan di GoFood/GrabFood? Fitur ini menghitung rasio mark-up otomatis
+                        agar untung bersih tidak dimakan komisi aplikator.</p>
+                </div>
+                <!-- Fitur 4 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100">
+                    <div
+                        class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Generator Slip Gaji Karyawan</h3>
+                    <p class="text-slate-600">Bikin slip gaji PDF rapi langsung dari HP. Otomatis menghitung tunjangan
+                        absen dan potongan telat tanpa pakai Excel rumit.</p>
+                </div>
+                <!-- Fitur 5 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100">
+                    <div class="w-12 h-12 bg-rose-100 text-rose-600 rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Pencatat Buku Hutang Cerdas</h3>
+                    <p class="text-slate-600">Catat kasbon tetangga/pelanggan tanpa takut bukunya hilang. Aplikasi bisa
+                        kirim link tagihan langung ke WA otomatis!</p>
+                </div>
+                <!-- Fitur 6 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100">
+                    <div
+                        class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Kartu Stok Gudang Digital</h3>
+                    <p class="text-slate-600">Stok barang masuk dan keluar langsung terekam rapi. Mencegah kebocoran
+                        stok dari karyawan nakal tanpa harus cek gudang tiap hari.</p>
+                </div>
+            </div>
+
+            <p class="text-center mt-10 text-slate-500 font-bold text-lg">...dan masih ada puluhan fitur pendorong omzet
+                lainnya!</p>
+        </div>
+    </section>
+
+    <!-- 5. UNIQUE SELLING PROPOSITION (100% Offline) -->
+    <section class="py-20 bg-blue-600 text-white relative overflow-hidden">
+        <div
+            class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIi8+PC9zdmc+')]">
+        </div>
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <h2 class="text-4xl md:text-5xl font-black mb-6">⚡ Keajaiban Teknologi PWA:<br />100% Offline Tanpa Sinyal!
+            </h2>
+            <p class="text-xl text-blue-100 leading-relaxed mb-10">
+                Kuota habis? Sinyal toko di <em>blank spot</em>? WiFi mati?<br /><strong
+                    class="text-white text-2xl">Tidak masalah sama sekali.</strong>
+            </p>
+            <p
+                class="text-lg text-blue-100 leading-relaxed max-w-3xl mx-auto bg-blue-700/50 p-6 rounded-2xl border border-blue-500">
+                Berbeda dengan aplikasi lain yang lumpuh saat kuota habis, ModalHP menyimpan seluruh rekap penjualan
+                Anda langsung di dalam memori HP. Anda tetap bisa jualan kencang! Rahasia omzet warung Anda 100% terekam
+                LOKAL, tidak ada yang bocor di server manapun.
+            </p>
+        </div>
+    </section>
+
+    <!-- 6 & 7. THE OFFER & RISK REVERSAL -->
+    <section id="offer" class="py-24 bg-slate-900 relative">
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">Berapa Investasi untuk 15 Alat Canggih
+                    Ini?</h2>
+                <p class="text-slate-400 text-lg">Jika langganan aplikasi luar, Anda buang minimal <span
+                        class="text-red-400 font-bold strike">Rp 300.000 SETIAP BULAN</span>.</p>
+            </div>
+
+            <div
+                class="bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-3xl p-1.5 shadow-2xl transform hover:-translate-y-2 transition-transform duration-500">
+                <div class="bg-white rounded-[20px] p-8 md:p-12 text-center relative overflow-hidden">
+                    <div
+                        class="absolute top-0 right-0 bg-red-500 text-white font-black py-2 px-6 rounded-bl-3xl shadow-lg">
+                        HEMAT 60%
+                    </div>
+
+                    <h3 class="text-2xl font-black text-slate-800 mb-2 mt-4 text-center">Akses Sepuasnya. Seumur Hidup.
+                    </h3>
+                    <p class="text-slate-500 font-medium mb-8">Tanpa Kuota Transaksi. Tanpa Biaya Tersembunyi.</p>
+
+                    <div class="flex items-center justify-center gap-4 mb-2">
+                        <span class="text-slate-400 line-through text-2xl font-bold">Rp 499.000</span>
+                    </div>
+                    <div class="text-6xl font-black text-slate-900 mb-2">
+                        Rp 199.000
+                    </div>
+                    <p
+                        class="text-emerald-600 font-black text-lg mb-10 bg-emerald-50 py-2 px-6 inline-block rounded-full border border-emerald-200">
+                        Hanya Bayar 1x SAJA!
+                    </p>
+
+                    <div class="space-y-4 mb-10 max-w-sm mx-auto text-left">
+                        <div class="flex items-center gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="font-bold text-slate-700">Akses Penuh 15 Tools UMKM</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="font-bold text-slate-700">100% Bisa Dipakai Offline</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="font-bold text-slate-700">Bebas Nge-Print Struk Bluetooth</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="font-bold text-slate-700">Update Gratis Seumur Hidup</span>
+                        </div>
+                    </div>
+
+                    <a href="https://beli.modalhp.com/lifetime"
+                        class="block w-full bg-blue-600 hover:bg-blue-700 text-white font-black py-5 px-6 rounded-2xl shadow-xl shadow-blue-200 transition-all text-xl md:text-2xl animate-pulse">
+                        YA, SAYA MAU BELI SEKARANG
+                    </a>
+                    <p class="text-sm text-slate-400 font-medium mt-4">
+                        Akses login instan dikirim ke Email & WA Anda.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Risk Reversal -->
+            <div
+                class="mt-12 bg-white/5 border border-white/10 rounded-3xl p-8 flex flex-col md:flex-row items-center md:items-start gap-6 relative">
+                <div
+                    class="w-20 h-20 rounded-full bg-yellow-400/20 text-yellow-400 flex items-center justify-center flex-shrink-0 animate-pulse border border-yellow-400/50">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                        </path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="font-black text-2xl text-white mb-3 text-center md:text-left">Garansi Uang Kembali 100%
+                    </h3>
+                    <p class="text-slate-300 leading-relaxed text-center md:text-left">
+                        Kami merancang ModalHP untuk menjadi alat tempur harian UMKM. Jika dalam <strong>14 Hari
+                            pertama</strong> Anda mendapati bahwa <em>Kasir ModalHP kami sama sekali tidak bisa
+                            digunakan saat HP Anda dalam keadaan OFFLINE (Tanpa Internet)</em>, silakan klaim ke CS
+                        kami. Uang Rp 199.000 Anda akan kami kembalikan utuh tanpa potongan!
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 py-10 text-center">
+        <div class="font-bold text-white text-xl tracking-tight mb-2">ModalHP.</div>
+        <p class="text-slate-500 text-sm">&copy; 2026 ModalHP Software. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
