@@ -30,7 +30,7 @@ export default defineConfig({
       },
       workbox: {
         // Cache version for invalidation - increment to force cache clear on new deploy
-        cacheId: 'modalhp-v2.2',
+        cacheId: 'modalhp-v2.3-hpp-fix',
         // Exclude tool JS chunks from initial precache (downloaded on-demand)
         // CSS is NOT excluded — it's small and needed for offline rendering
         globIgnores: ['**/assets/tool_*.js'],

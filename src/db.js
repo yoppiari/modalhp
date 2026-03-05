@@ -43,7 +43,7 @@ db.version(3).stores({
 db.version(4).stores({
     // HPP Calculations History
     // Stores saved HPP calculations for review and transfer to products
-    hpp_calculations: '++id, product_name, created_at'
+    hpp_calculations: '++id, product_name, created_at, total_raw, labor_cost, overhead_cost, total_cost, quantity, hpp_per_unit, selling_price, raw_materials'
 });
 
 // Helper to check if DB is open

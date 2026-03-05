@@ -295,14 +295,14 @@ const saveCalculation = async () => {
   try {
     const calculation = {
       product_name: productName.value,
-      raw_materials: rawMaterials.value.filter(m => m.name || m.cost > 0),
-      total_raw: totalRaw.value,
-      labor_cost: laborCost.value || 0,
-      overhead_cost: overheadCost.value || 0,
-      total_cost: totalProductionCost.value,
-      quantity: quantity.value,
-      hpp_per_unit: hppPerUnit.value,
-      selling_price: sellingPrice.value || 0,
+      raw_materials: rawMaterials.value.filter(m => m.name || m.cost > 0).map(m => ({ name: m.name || '', cost: Number(m.cost) || 0 })),
+      total_raw: Number(totalRaw.value) || 0,
+      labor_cost: Number(laborCost.value) || 0,
+      overhead_cost: Number(overheadCost.value) || 0,
+      total_cost: Number(totalProductionCost.value) || 0,
+      quantity: Number(quantity.value) || 1,
+      hpp_per_unit: Number(hppPerUnit.value) || 0,
+      selling_price: Number(sellingPrice.value) || 0,
       created_at: Date.now()
     };
 
