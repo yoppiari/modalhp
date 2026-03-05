@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "cloudflare-api": {
+      "url": "https://mcp.cloudflare.com/mcp",
+      "transport": {
+        "type": "streamable-http"
+      }
+    },
+    "cloudflare-docs": {
+      "url": "https://docs.mcp.cloudflare.com/mcp",
+      "transport": {
+        "type": "streamable-http"
+      }
+    },
+    "cloudflare-workers-bindings": {
+      "url": "https://bindings.mcp.cloudflare.com/mcp",
+      "transport": {
+        "type": "streamable-http"
+      }
+    }
+  }
+}
