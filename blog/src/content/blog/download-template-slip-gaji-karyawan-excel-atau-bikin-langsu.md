@@ -2,6 +2,8 @@
 title: "Download Template Slip Gaji Karyawan Excel (Atau Bikin Langsung Format PDF di HP)"
 description: "Apakah Anda sedang mencari *template excel* untuk membuat daftar upah dan slip gaji bulanan karyawan toko Anda secara gratis?"
 pubDate: "2026-03-14T05:00:00.000Z"
+heroImage: "../../assets/blog-placeholder-2.jpg"
+heroImageAlt: "Ilustrasi Download Template Slip Gaji Karyawan Excel (Atau Bikin Langsung Format PDF di HP)"
 ---
 
 Apakah Anda sedang mencari *template excel* untuk membuat daftar upah dan slip gaji bulanan karyawan toko Anda secara gratis?

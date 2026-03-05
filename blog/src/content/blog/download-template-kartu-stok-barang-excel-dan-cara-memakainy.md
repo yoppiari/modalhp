@@ -2,6 +2,8 @@
 title: "Download Template Kartu Stok Barang Excel dan Cara Memakainya"
 description: "Pengendalian mutasi inventori di Gudang, Apotik mini, hingga Minimarket sangat krusial menggunakan **Kartu Stok (Bin Card)**."
 pubDate: "2026-03-23T05:00:00.000Z"
+heroImage: "../../assets/blog-placeholder-4.jpg"
+heroImageAlt: "Ilustrasi Download Template Kartu Stok Barang Excel dan Cara Memakainya"
 ---
 
 Pengendalian mutasi inventori di Gudang, Apotik mini, hingga Minimarket sangat krusial menggunakan **Kartu Stok (Bin Card)**.

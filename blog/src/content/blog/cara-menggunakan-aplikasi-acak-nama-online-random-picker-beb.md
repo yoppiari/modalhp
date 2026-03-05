@@ -2,6 +2,8 @@
 title: "Cara Menggunakan Aplikasi Acak Nama Online (Random Picker) Bebas Kuota Offline"
 description: "Pernahkah Anda bertugas mengacak nama kelompok tugas sekolah, arisan RT, atau hadiah pelanggan? Mengocok kertas lintingan di dalam botol plastik be..."
 pubDate: "2026-03-30T05:00:00.000Z"
+heroImage: "../../assets/blog-placeholder-2.jpg"
+heroImageAlt: "Ilustrasi Cara Menggunakan Aplikasi Acak Nama Online (Random Picker) Bebas Kuota Offline"
 ---
 
 Pernahkah Anda bertugas mengacak nama kelompok tugas sekolah, arisan RT, atau hadiah pelanggan? Mengocok kertas lintingan di dalam botol plastik belakangan ini sudah dibilang kuno.

@@ -2,6 +2,8 @@
 title: "Cara Membuat Pelanggan Restoran Langsung Nyambung WiFi Toko pakai QR Code (Satu Kali Scan)"
 description: "Siapa yang tidak sebal ketika pelanggan sibuk menginterogasi Kasir puluhan kali dalam sehari hanya untuk bertanya *'Mbak, password WiFi di sini apa..."
 pubDate: "2026-04-03T05:00:00.000Z"
+heroImage: "../../assets/blog-placeholder-5.jpg"
+heroImageAlt: "Ilustrasi Cara Membuat Pelanggan Restoran Langsung Nyambung WiFi Toko pakai QR Code (Satu Kali Scan)"
 ---
 
 Siapa yang tidak sebal ketika pelanggan sibuk menginterogasi Kasir puluhan kali dalam sehari hanya untuk bertanya *"Mbak, password WiFi di sini apa ya? Huruf besarnya yang mana?"*

@@ -2,6 +2,8 @@
 title: "Cara Pembukuan Warung Sembako Sederhana (Tinggalkan Buku Tulis!)"
 description: "'Warungnya selalu ramai pembeli tiap hari, laci penuh uang, tapi kenapa saat mau diputar belanja lagi, modal aslinya malah minus?'"
 pubDate: "2026-03-09T05:00:00.000Z"
+heroImage: "../../assets/blog-placeholder-1.jpg"
+heroImageAlt: "Ilustrasi Cara Pembukuan Warung Sembako Sederhana (Tinggalkan Buku Tulis!)"
 ---
 
 "Warungnya selalu ramai pembeli tiap hari, laci penuh uang, tapi kenapa saat mau diputar belanja lagi, modal aslinya malah minus?"

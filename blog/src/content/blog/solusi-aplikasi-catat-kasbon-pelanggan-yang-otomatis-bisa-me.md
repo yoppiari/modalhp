@@ -2,6 +2,8 @@
 title: "Solusi Aplikasi Catat Kasbon Pelanggan yang Otomatis Bisa Mengirim WA Penagihan"
 description: "Apakah ada aplikasi gratis untuk mengingat tunggakan kredit tanpa disisipi iklan tayang penuh 30 detik? Mencari pengingat bayar hutang yang ringan ..."
 pubDate: "2026-03-28T05:00:00.000Z"
+heroImage: "../../assets/blog-placeholder-5.jpg"
+heroImageAlt: "Ilustrasi Solusi Aplikasi Catat Kasbon Pelanggan yang Otomatis Bisa Mengirim WA Penagihan"
 ---
 
 Apakah ada aplikasi gratis untuk mengingat tunggakan kredit tanpa disisipi iklan tayang penuh 30 detik? Mencari pengingat bayar hutang yang ringan saat dipakai bukanlah hal gampang.

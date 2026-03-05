@@ -2,6 +2,8 @@
 title: "Download Contoh Buku Hutang Warung yang Bisa Diprint"
 description: "Mencatat Kasbon hutang berlembar-lembar buku lecek? Sangat merepotkan saat akhir bulan."
 pubDate: "2026-03-27T05:00:00.000Z"
+heroImage: "../../assets/blog-placeholder-3.jpg"
+heroImageAlt: "Ilustrasi Download Contoh Buku Hutang Warung yang Bisa Diprint"
 ---
 
 Mencatat Kasbon hutang berlembar-lembar buku lecek? Sangat merepotkan saat akhir bulan.

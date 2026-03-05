@@ -2,6 +2,8 @@
 title: "Review: Benarkah Aplikasi Kasir Warung Gratis Sepenuhnya Gratis? Awas Data Dijual!"
 description: "Mencari software gratisan di internet untuk operasional bisnis terkadang harus mengorbankan privasi. Ingat idiom: *'Jika produknya gratis, berarti ..."
 pubDate: "2026-03-22T05:00:00.000Z"
+heroImage: "../../assets/blog-placeholder-1.jpg"
+heroImageAlt: "Ilustrasi Review: Benarkah Aplikasi Kasir Warung Gratis Sepenuhnya Gratis? Awas Data Dijual!"
 ---
 
 Mencari software gratisan di internet untuk operasional bisnis terkadang harus mengorbankan privasi. Ingat idiom: *"Jika produknya gratis, berarti Anda-lah produknya"*. Kenapa banyak startup raksasa membakar miliaran dana untuk memberi aplikasi kasir Cloud secara cuma-cuma?

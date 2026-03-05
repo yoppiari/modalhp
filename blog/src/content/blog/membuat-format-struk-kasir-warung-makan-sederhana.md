@@ -2,6 +2,8 @@
 title: "Membuat Format Struk Kasir Warung Makan Sederhana"
 description: "Struk kasir kertas tak pernah surut dari permintaan (utamanya untuk pencatatan uang makan perusahaan/ *reimburse* kantor). Lalu seperti apa format ..."
 pubDate: "2026-03-17T05:00:00.000Z"
+heroImage: "../../assets/blog-placeholder-1.jpg"
+heroImageAlt: "Ilustrasi Membuat Format Struk Kasir Warung Makan Sederhana"
 ---
 
 Struk kasir kertas tak pernah surut dari permintaan (utamanya untuk pencatatan uang makan perusahaan/ *reimburse* kantor). Lalu seperti apa format standar Struk makanan UMKM?

@@ -2,6 +2,8 @@
 title: "Cara Mengatur Stok Barang Masuk dan Keluar Toko Sembako (Dengan Mudah)"
 description: "Hal paling menyita waktu saat menutup warung adalah memeriksa kesesuaian fisik stok sisa dengan omzet uang sisa di laci (Stock Opname Harian/Minggu..."
 pubDate: "2026-03-24T05:00:00.000Z"
+heroImage: "../../assets/blog-placeholder-4.jpg"
+heroImageAlt: "Ilustrasi Cara Mengatur Stok Barang Masuk dan Keluar Toko Sembako (Dengan Mudah)"
 ---
 
 Hal paling menyita waktu saat menutup warung adalah memeriksa kesesuaian fisik stok sisa dengan omzet uang sisa di laci (Stock Opname Harian/Mingguan). Jika barang hilang dari lemari (dicuri atau lupa ketik penjualan), maka margin setipis silet tidak akan bersisa.

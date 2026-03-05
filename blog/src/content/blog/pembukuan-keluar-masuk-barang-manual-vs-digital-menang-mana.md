@@ -2,6 +2,8 @@
 title: "Pembukuan Keluar Masuk Barang Manual vs Digital: Menang Mana?"
 description: "Sering terjadi perdebatan di warisan bisnis keluarga: sang Ayah percaya pada *Buku Tulis Tebal*, sang Anak ingin memaksa seluruh pekerja masuk ke t..."
 pubDate: "2026-03-25T05:00:00.000Z"
+heroImage: "../../assets/blog-placeholder-5.jpg"
+heroImageAlt: "Ilustrasi Pembukuan Keluar Masuk Barang Manual vs Digital: Menang Mana?"
 ---
 
 Sering terjadi perdebatan di warisan bisnis keluarga: sang Ayah percaya pada *Buku Tulis Tebal*, sang Anak ingin memaksa seluruh pekerja masuk ke tabel layar HP.

@@ -2,6 +2,8 @@
 title: "Contoh Slip Gaji Toko Kelontong Sederhana Biar Kelihatan Profesional"
 description: "Pegawai warung atau minimarket mandiri juga butuh keabsahan dokumen untuk mengajukan kredit kendaraan hingga rumah. Toko dengan slip gaji sekecil a..."
 pubDate: "2026-03-16T05:00:00.000Z"
+heroImage: "../../assets/blog-placeholder-3.jpg"
+heroImageAlt: "Ilustrasi Contoh Slip Gaji Toko Kelontong Sederhana Biar Kelihatan Profesional"
 ---
 
 Pegawai warung atau minimarket mandiri juga butuh keabsahan dokumen untuk mengajukan kredit kendaraan hingga rumah. Toko dengan slip gaji sekecil apapun itu lebih dipercaya Bank daripada toko yang tidak pernah merilis dokumen honor selembarpun.

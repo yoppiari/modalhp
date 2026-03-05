@@ -2,6 +2,8 @@
 title: "Generator Link WA Otomatis (wa.me) Untuk Menarik Orderan Pelanggan Cepat"
 description: "Mewajibkan konsumen mengetik '*+6285xxx... Tolong saya mau pesan Mie Goreng*' di profil Instagram bisnis adalah resep kegagalan konversi penjualan ..."
 pubDate: "2026-04-02T05:00:00.000Z"
+heroImage: "../../assets/blog-placeholder-2.jpg"
+heroImageAlt: "Ilustrasi Generator Link WA Otomatis (wa.me) Untuk Menarik Orderan Pelanggan Cepat"
 ---
 
 Mewajibkan konsumen mengetik "*+6285xxx... Tolong saya mau pesan Mie Goreng*" di profil Instagram bisnis adalah resep kegagalan konversi penjualan masa kini. Manusia modern sangat membenci kerumitan menyimpan kontak di *Phonebook* hanya untuk numpang nanya barang belanja.

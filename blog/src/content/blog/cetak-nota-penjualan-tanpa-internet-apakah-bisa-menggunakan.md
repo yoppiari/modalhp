@@ -2,6 +2,8 @@
 title: "Cetak Nota Penjualan Tanpa Internet, Apakah Bisa Menggunakan PWA?"
 description: "Apa perbedaan aplikasi kasir berbasis Android 'Native' di Play Store vs 'PWA' (Progressive Web App) hasil instalasi tautan brosur website?"
 pubDate: "2026-03-18T05:00:00.000Z"
+heroImage: "../../assets/blog-placeholder-5.jpg"
+heroImageAlt: "Ilustrasi Cetak Nota Penjualan Tanpa Internet, Apakah Bisa Menggunakan PWA?"
 ---
 
 Apa perbedaan aplikasi kasir berbasis Android "Native" di Play Store vs "PWA" (Progressive Web App) hasil instalasi tautan brosur website?

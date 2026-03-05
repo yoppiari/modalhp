@@ -2,6 +2,8 @@
 title: "Panduan Cara Pembukuan Warung Sembako Harian Anti Boncos"
 description: "Warung sembako memiliki ratusan item barang dengan margin (keuntungan) per produk yang sangat tipis, kadang hanya Rp500 perak. Kesalahan fatal yang..."
 pubDate: "2026-03-21T05:00:00.000Z"
+heroImage: "../../assets/blog-placeholder-1.jpg"
+heroImageAlt: "Ilustrasi Panduan Cara Pembukuan Warung Sembako Harian Anti Boncos"
 ---
 
 Warung sembako memiliki ratusan item barang dengan margin (keuntungan) per produk yang sangat tipis, kadang hanya Rp500 perak. Kesalahan fatal yang membuat warung boncos adalah tidak mencatat minuman titipan (konsinyasi), mencampur uang dagang, atau digerogoti kasbon tetangga.

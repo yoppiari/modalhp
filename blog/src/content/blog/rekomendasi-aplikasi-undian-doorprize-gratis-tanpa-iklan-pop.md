@@ -2,6 +2,8 @@
 title: "Rekomendasi Aplikasi Undian Doorprize Gratis Tanpa Iklan Pop-up"
 description: "Membuat acara kumpul karyawan, arisan kampung, atau sekadar membagikan hadiah (*giveaway*) ke pelanggan toko paling seru jika menggunakan sistem un..."
 pubDate: "2026-03-29T05:00:00.000Z"
+heroImage: "../../assets/blog-placeholder-3.jpg"
+heroImageAlt: "Ilustrasi Rekomendasi Aplikasi Undian Doorprize Gratis Tanpa Iklan Pop-up"
 ---
 
 Membuat acara kumpul karyawan, arisan kampung, atau sekadar membagikan hadiah (*giveaway*) ke pelanggan toko paling seru jika menggunakan sistem undian putar.

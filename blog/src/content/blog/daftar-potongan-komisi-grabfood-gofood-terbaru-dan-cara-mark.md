@@ -2,6 +2,8 @@
 title: "Daftar Potongan Komisi GrabFood & GoFood Terbaru (Dan Cara Markup Harganya)"
 description: "Memahami berapa besar potongan komisi Gojek, Grab, dan platform pengiriman online lainnya adalah kunci bertahan di era pertempuran diskon daring. R..."
 pubDate: "2026-03-12T05:00:00.000Z"
+heroImage: "../../assets/blog-placeholder-3.jpg"
+heroImageAlt: "Ilustrasi Daftar Potongan Komisi GrabFood & GoFood Terbaru (Dan Cara Markup Harganya)"
 ---
 
 Memahami berapa besar potongan komisi Gojek, Grab, dan platform pengiriman online lainnya adalah kunci bertahan di era pertempuran diskon daring. Rata-rata platform mengenakan potongan 20% (plus biaya layanan aplikasi yang dibebankan kepada pelanggan atau resto).

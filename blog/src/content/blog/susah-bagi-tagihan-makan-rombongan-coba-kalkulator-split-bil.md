@@ -2,6 +2,8 @@
 title: "Susah Bagi Tagihan Makan Rombongan? Coba Kalkulator Split Bill Ini"
 description: "Makan berenam, pesanan puluhan menu, lalu saat struk datang semua kebingungan mencari tahu siapa bayar yang mana. Belum lagi jika harus membagi beb..."
 pubDate: "2026-03-31T05:00:00.000Z"
+heroImage: "../../assets/blog-placeholder-2.jpg"
+heroImageAlt: "Ilustrasi Susah Bagi Tagihan Makan Rombongan? Coba Kalkulator Split Bill Ini"
 ---
 
 Makan berenam, pesanan puluhan menu, lalu saat struk datang semua kebingungan mencari tahu siapa bayar yang mana. Belum lagi jika harus membagi beban Pajak Resto (PB1 10%) dan Service Charge 5% secara adil ke masing-masing piring.

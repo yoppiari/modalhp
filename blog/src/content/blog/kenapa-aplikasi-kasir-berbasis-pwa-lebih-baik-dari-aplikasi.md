@@ -2,6 +2,8 @@
 title: "Kenapa Aplikasi Kasir Berbasis PWA Lebih Baik Dari Aplikasi Mod APK?"
 description: "Mencari versi *Crack* atau Bajakan (*Mod APK*) dari kasir di media sosial merupakan bunuh diri perlahan. Pencuri *Malware* bisa diam-diam memata-ma..."
 pubDate: "2026-03-19T05:00:00.000Z"
+heroImage: "../../assets/blog-placeholder-3.jpg"
+heroImageAlt: "Ilustrasi Kenapa Aplikasi Kasir Berbasis PWA Lebih Baik Dari Aplikasi Mod APK?"
 ---
 
 Mencari versi *Crack* atau Bajakan (*Mod APK*) dari kasir di media sosial merupakan bunuh diri perlahan. Pencuri *Malware* bisa diam-diam memata-matai aplikasi digital banking (M-Banking) yang ada di mesin HP Android Anda sendiri gara gara file Mod APK sialan itu terinstal sebagai Trojan!

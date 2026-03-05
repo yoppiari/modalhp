@@ -2,6 +2,8 @@
 title: "Cara Membuat QR Code Menu Restoran Cepat dan 100% Gratis Selamanya"
 description: "Zaman *touchless* pasca pandemi mendorong jutaan pemilik meja kafe/resto mengubah buku menu cetak tradisionalnya ke dalam selembar stiker stempel b..."
 pubDate: "2026-04-01T05:00:00.000Z"
+heroImage: "../../assets/blog-placeholder-5.jpg"
+heroImageAlt: "Ilustrasi Cara Membuat QR Code Menu Restoran Cepat dan 100% Gratis Selamanya"
 ---
 
 Zaman *touchless* pasca pandemi mendorong jutaan pemilik meja kafe/resto mengubah buku menu cetak tradisionalnya ke dalam selembar stiker stempel berbentuk QR Code.

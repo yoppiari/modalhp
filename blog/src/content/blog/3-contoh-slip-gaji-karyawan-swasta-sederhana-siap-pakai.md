@@ -2,6 +2,8 @@
 title: "3 Contoh Slip Gaji Karyawan Swasta Sederhana & Siap Pakai"
 description: "Baik Anda memiliki PT besar, toko kelontong, atau usaha konveksi kecil-kecilan, memberikan slip gaji yang rapi adalah bentuk profesionalisme dan me..."
 pubDate: "2026-03-07T05:00:00.000Z"
+heroImage: "../../assets/blog-placeholder-1.jpg"
+heroImageAlt: "Ilustrasi 3 Contoh Slip Gaji Karyawan Swasta Sederhana & Siap Pakai"
 ---
 
 Baik Anda memiliki PT besar, toko kelontong, atau usaha konveksi kecil-kecilan, memberikan slip gaji yang rapi adalah bentuk profesionalisme dan menghargai karyawan. Sayangnya, membuat format dari nol terkadang membingungkan.

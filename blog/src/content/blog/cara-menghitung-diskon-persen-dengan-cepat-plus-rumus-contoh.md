@@ -2,6 +2,8 @@
 title: "Cara Menghitung Diskon Persen dengan Cepat (Plus Rumus & Contoh)"
 description: "Menjelang akhir bulan atau hari raya, memberikan diskon adalah strategi wajib untuk memancing pelanggan. Sayangnya, banyak pemilik usaha yang masih..."
 pubDate: "2026-03-05T05:00:00.000Z"
+heroImage: "../../assets/diskon_calculator.png"
+heroImageAlt: "Ilustrasi kalkulator diskon persen untuk UMKM"
 ---
 
 Menjelang akhir bulan atau hari raya, memberikan diskon adalah strategi wajib untuk memancing pelanggan. Sayangnya, banyak pemilik usaha yang masih bingung **cara menghitung diskon persen** secara akurat, sehingga bukannya untung, malah berujung rugi alias *boncos*.

@@ -2,6 +2,8 @@
 title: "Cara Membuat Laporan Keuangan UMKM Tanpa Pusing Angka"
 description: "Laporan keuangan sering ditakuti oleh pelaku UMKM karena terkesan butuh keahlian akuntansi. Padahal, inti dari pembukuan UMKM hanyalah mengetahui '..."
 pubDate: "2026-03-20T05:00:00.000Z"
+heroImage: "../../assets/blog-placeholder-4.jpg"
+heroImageAlt: "Ilustrasi Cara Membuat Laporan Keuangan UMKM Tanpa Pusing Angka"
 ---
 
 Laporan keuangan sering ditakuti oleh pelaku UMKM karena terkesan butuh keahlian akuntansi. Padahal, inti dari pembukuan UMKM hanyalah mengetahui "Berapa pemasukan kotor hari ini?" dan "Berapa sisa uang setelah dikurangi modal?".

@@ -2,6 +2,8 @@
 title: "Cara Menghitung Gaji Lembur Harian dan Potongan Absen Karyawan"
 description: "Banyak toko kelontong atau kios grosir kebingungan mencari standar yang pas untuk menghitung potongan gaji jika karyawan bolos, dan hadiah apa yang..."
 pubDate: "2026-03-15T05:00:00.000Z"
+heroImage: "../../assets/blog-placeholder-3.jpg"
+heroImageAlt: "Ilustrasi Cara Menghitung Gaji Lembur Harian dan Potongan Absen Karyawan"
 ---
 
 Banyak toko kelontong atau kios grosir kebingungan mencari standar yang pas untuk menghitung potongan gaji jika karyawan bolos, dan hadiah apa yang adil untuk jam lembur.

@@ -40,6 +40,12 @@ db.version(3).stores({
     kasbon: '++id, employee_id, date, amount, remaining, status, note'
 });
 
+db.version(4).stores({
+    // HPP Calculations History
+    // Stores saved HPP calculations for review and transfer to products
+    hpp_calculations: '++id, product_name, created_at'
+});
+
 // Helper to check if DB is open
 export const isDbReady = async () => {
     try {

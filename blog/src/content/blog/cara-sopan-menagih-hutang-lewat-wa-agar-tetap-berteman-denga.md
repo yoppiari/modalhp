@@ -2,6 +2,8 @@
 title: "Cara Sopan Menagih Hutang Lewat WA Agar Tetap Berteman dengan Pelanggan"
 description: "Ujian tersulit UMKM yang berada di pemukiman / perkampungan padat penduduk adalah menolak Kasbon / Hutang dari tetangga. Apabila sudah jatuh tempo,..."
 pubDate: "2026-03-26T05:00:00.000Z"
+heroImage: "../../assets/blog-placeholder-3.jpg"
+heroImageAlt: "Ilustrasi Cara Sopan Menagih Hutang Lewat WA Agar Tetap Berteman dengan Pelanggan"
 ---
 
 Ujian tersulit UMKM yang berada di pemukiman / perkampungan padat penduduk adalah menolak Kasbon / Hutang dari tetangga. Apabila sudah jatuh tempo, cara menagih hutang via chat WA tentu memerlukan trik persuasif agar si peminjam tidak tersinggung atau marah balik.

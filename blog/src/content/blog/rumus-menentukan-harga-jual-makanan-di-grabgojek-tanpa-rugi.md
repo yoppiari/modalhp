@@ -2,6 +2,8 @@
 title: "Rumus Menentukan Harga Jual Makanan di Grab/Gojek Tanpa Rugi"
 description: "Berjualan di platform ojek online (ojol) seperti GoFood, GrabFood, atau ShopeeFood memang memperluas pasar. Sayangnya, potongan komisi rata-rata 20..."
 pubDate: "2026-03-11T05:00:00.000Z"
+heroImage: "../../assets/blog-placeholder-3.jpg"
+heroImageAlt: "Ilustrasi Rumus Menentukan Harga Jual Makanan di Grab/Gojek Tanpa Rugi"
 ---
 
 Berjualan di platform ojek online (ojol) seperti GoFood, GrabFood, atau ShopeeFood memang memperluas pasar. Sayangnya, potongan komisi rata-rata 20% + Rp1.000 bisa memakan habis profit bersih Anda jika salah men-setting harga.

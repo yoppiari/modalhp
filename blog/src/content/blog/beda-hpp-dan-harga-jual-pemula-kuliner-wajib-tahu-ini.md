@@ -2,6 +2,8 @@
 title: "Beda HPP dan Harga Jual: Pemula Kuliner Wajib Tahu Ini!"
 description: "Banyak pemula bisnis kuliner yang gulung tikar karena mencampuradukkan HPP dengan harga jual. HPP (Harga Pokok Penjualan) adalah murni **modal ment..."
 pubDate: "2026-03-10T05:00:00.000Z"
+heroImage: "../../assets/blog-placeholder-5.jpg"
+heroImageAlt: "Ilustrasi Beda HPP dan Harga Jual: Pemula Kuliner Wajib Tahu Ini!"
 ---
 
 Banyak pemula bisnis kuliner yang gulung tikar karena mencampuradukkan HPP dengan harga jual. HPP (Harga Pokok Penjualan) adalah murni **modal mentah** pembuatan satu porsi makanan. Di dalamnya ada biaya bahan baku, gas, hingga kemasan.

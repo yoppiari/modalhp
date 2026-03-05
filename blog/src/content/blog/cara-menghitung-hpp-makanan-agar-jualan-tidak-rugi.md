@@ -2,6 +2,8 @@
 title: "Cara Menghitung HPP Makanan Agar Jualan Tidak Rugi"
 description: "Tahukah Anda bahwa alasan nomor 1 bisnis kuliner bangkrut di tahun pertama adalah karena salah menentukan harga jual? Banyak pemula yang sekadar me..."
 pubDate: "2026-03-06T05:00:00.000Z"
+heroImage: "../../assets/blog-placeholder-4.jpg"
+heroImageAlt: "Ilustrasi Cara Menghitung HPP Makanan Agar Jualan Tidak Rugi"
 ---
 
 Tahukah Anda bahwa alasan nomor 1 bisnis kuliner bangkrut di tahun pertama adalah karena salah menentukan harga jual? Banyak pemula yang sekadar menebak-nebak harga, tanpa tahu cara menghitung Harga Pokok Penjualan (HPP) yang benar.
